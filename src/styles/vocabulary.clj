@@ -41,6 +41,7 @@
 (def viewer-anchor        :a)
 (def viewer-strong        :strong)
 (def viewer-em            :em)
+(def viewer-hr            :hr)
 (def viewer-ul            :ul)
 (def viewer-ol            :ol)
 (def viewer-li            :li)

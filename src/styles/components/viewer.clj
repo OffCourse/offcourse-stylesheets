@@ -1,6 +1,6 @@
 (ns styles.components.viewer
   (:refer-clojure :exclude [rem + - * /])
-  (:require [offcourse.styles.vocabulary :as v]
+  (:require [styles.vocabulary :as v]
             [garden
              [selectors :as s]
              [arithmetic :refer [+ - * /]]
@@ -38,7 +38,6 @@
     [v/viewer-text           (merge  (:text               templates)
                                      {:padding          [[0 0 (:two-third units) 0]]})]
     [v/viewer-anchor         (merge  (:text               templates)
-                                     (:border-default     templates)
                                      {:color             (:primary colors)
                                       :cursor             :pointer
                                       :padding          [[0 0 0 0]]})
