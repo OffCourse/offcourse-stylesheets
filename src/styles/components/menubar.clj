@@ -6,7 +6,7 @@
 
 (defn menubar [{:keys [templates colors units]}]
   [[v/menubar           (merge (:row-component        templates)
-                               (:border-default       templates)
+                               (:border-thin          templates)
                                {:justify-content      :space-between
                                 :align-items          :center
                                 :flex                 1

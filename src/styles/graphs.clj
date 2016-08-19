@@ -10,7 +10,7 @@
 (defn -compose [graph config] ((graph/compile graph) config))
 
 (def units-graph
-  {:column               (fnk [full] (* full 14))
+  {:column               (fnk [full] (* full 10))
    :column-gap           (fnk [full] (* 1 full))
    :padded-column        (fnk [full] (* 12 full))
    :sidebar              (fnk [column column-gap] (+ column (* 2 column-gap)))
@@ -50,8 +50,8 @@
 (def templates-graph
   {:highlighted      (fnk [colors] {:background-color (:primary colors)
                                     :color            (:night colors)})
-   :selected         (fnk [colors] {:background-color (:night colors)
-                                    :color            (:day colors)})
+   :selected         (fnk [colors] {:background-color (:light colors)
+                                    :color            (:night colors)})
    :paper            (fnk [colors] {:background-color (:day colors)
                                     :color            (:night colors)})
    :sheet            (fnk [paper borders] (merge paper
@@ -131,8 +131,8 @@
                                    :padding          [[0 (:third units)]]
                                    :border           :none})
 
-   :list-item         (fnk [row-component border-default title units]
-                           (merge row-component border-default title
+   :list-item         (fnk [row-component border-thin title units]
+                           (merge row-component border-thin title
                                   {:margin-bottom   (:sixth units)
                                    :align-items     :center
                                    :font-size       (:subtitle-font units)

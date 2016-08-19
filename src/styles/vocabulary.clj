@@ -90,5 +90,5 @@
 (def hovered (s/& hover))
 (def first (s/& first-child))
 (def last (s/& last-child))
-(def second (s/& (s/nth-child 2)))
-(def third (s/& (s/nth-child 3)))
+(def second (s/& (s/nth-child "2")))
+(def third (s/& (s/nth-child "3")))
