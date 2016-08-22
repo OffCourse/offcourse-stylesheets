@@ -2,21 +2,20 @@
 (def version "0.1.4-SNAPSHOT")
 
 (set-env!
- :source-paths #{"src/"}
- :dependencies '[[adzerk/bootlaces "0.1.4" :scope "test"]])
+ :source-paths #{"src/"})
 
-(require '[adzerk.bootlaces :refer :all])
-
-(bootlaces! version)
+(set-env! :repositories [["clojars" {:url "https://clojars.org/repo/"
+                                     :username (System/getenv "CLOJARS_USER")
+                                     :password (System/getenv "CLOJARS_PASS")}]])
 
 (task-options!
    push {:repo           "clojars"
          :ensure-branch  "master"
-         :ensure-clean   false
+         :ensure-clean   true
          :ensure-version version}
    pom {:project     'offcourse/styles
         :version     version
-        :description "Offcourse shared stylesheets"
+        :description "Offcourse stylesheets"
         :url         "https://github.com/offcouse/offcourse-stylesheets/readme.md"
         :scm         {:url "https://github.com/offcouse/offcourse-stylesheets"}
         :license     {"Eclipse Public License"
@@ -32,3 +31,7 @@
 (deftask dev []
   (comp (watch)
         (build)))
+
+(deftask deploy []
+  (comp (build)
+        (push :repo "clojars")))
