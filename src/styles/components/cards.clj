@@ -17,7 +17,8 @@
 (defn cards [{:keys [templates breakpoints borders colors units]}]
   [[v/cards (merge (:row-component templates)
                    (:recycled-paper templates)
-                   {:padding          (:full units)
+                   {:background :red
+                    :padding          (:full units)
                     :column-gap       (:column-gap units)})
     [v/container {:display :inline-block
                   :width (:column units)
