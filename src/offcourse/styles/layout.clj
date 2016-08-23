@@ -2,7 +2,7 @@
   (:refer-clojure :exclude [rem + - * /])
   (:require [garden.units :as u :refer [vh]]
             [garden.arithmetic :refer [*]]
-            [styles.vocabulary :as v]))
+            [offcourse.styles.vocabulary :as v]))
 
 (defn layout [{:keys [templates units colors]}]
   [[v/layout        (merge (:column-component templates)

@@ -3,7 +3,7 @@
   (:require [garden
              [arithmetic :refer [* +]]
              [stylesheet :refer [at-media]]]
-            [styles.vocabulary :as v]))
+            [offcourse.styles.vocabulary :as v]))
 
 (defn calculate-breakpoint [{:keys [min-width max-width column-count]} {:keys [column-gap column]}]
   (at-media {:min-width min-width :max-width max-width}

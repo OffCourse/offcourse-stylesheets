@@ -1,5 +1,5 @@
 (ns offcourse.styles.components.form
-  (:require [styles.vocabulary :as v]))
+  (:require [offcourse.styles.vocabulary :as v]))
 
 (defn form [{:keys [templates colors units]}]
   [[v/form         (merge (:row-component templates)

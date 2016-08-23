@@ -1,5 +1,5 @@
 (ns offcourse.styles.components.button
-  (:require [styles.vocabulary :as v]))
+  (:require [offcourse.styles.vocabulary :as v]))
 
 (defn button [{:keys [templates colors units fonts]}]
 

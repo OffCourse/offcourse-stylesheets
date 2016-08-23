@@ -1,7 +1,7 @@
 (ns offcourse.styles.typography
   (:refer-clojure :exclude [+ - * /])
   (:require [garden.stylesheet :refer [at-font-face]]
-            [styles.vocabulary :as v]))
+            [offcourse.styles.vocabulary :as v]))
 
 (defn make-at-font-face [[font-name file-name]]
   (at-font-face {:font-family font-name

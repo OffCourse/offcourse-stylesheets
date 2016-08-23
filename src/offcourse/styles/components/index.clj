@@ -1,5 +1,5 @@
 (ns offcourse.styles.components.index
-  (:require [styles.components
+  (:require [offcourse.styles.components
              [cards :refer [cards]]
              [dashboard :refer [dashboard]]
              [button :refer [button]]

@@ -2,7 +2,7 @@
   (:refer-clojure :exclude [rem + - * /])
   (:require [garden.arithmetic :refer [*]]
             [garden.units :as u :refer [percent px rem]]
-            [styles.vocabulary :as v]))
+            [offcourse.styles.vocabulary :as v]))
 
 (defn shame [{:keys [templates borders colors fonts units]}]
   [[:.checkpoint           (merge (:row-component      templates)

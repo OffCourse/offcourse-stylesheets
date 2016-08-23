@@ -2,7 +2,7 @@
   (:refer-clojure :exclude [rem + - * /])
   (:require [garden.arithmetic :refer [*]]
             [garden.units :as u :refer [percent]]
-            [styles.vocabulary :as v]))
+            [offcourse.styles.vocabulary :as v]))
 
 (defn menubar [{:keys [templates colors units]}]
   [[v/menubar           (merge (:row-component        templates)

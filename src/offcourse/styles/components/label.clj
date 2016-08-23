@@ -1,5 +1,5 @@
 (ns offcourse.styles.components.label
-  (:require [styles.vocabulary :as v]))
+  (:require [offcourse.styles.vocabulary :as v]))
 
 (defn label-component [{:keys [templates fonts colors units]}]
   [v/labels  (merge (:row-component templates)

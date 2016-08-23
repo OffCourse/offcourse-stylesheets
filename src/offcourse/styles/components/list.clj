@@ -1,6 +1,6 @@
 (ns offcourse.styles.components.list
   (:refer-clojure :exclude [first last list])
-  (:require [styles.vocabulary :as v]))
+  (:require [offcourse.styles.vocabulary :as v]))
 
 (defn list-component [{:keys [templates borders colors fonts units]}]
 

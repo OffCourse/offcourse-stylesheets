@@ -1,5 +1,5 @@
 (ns offcourse.styles.components.dashboard
-  (:require [styles.vocabulary :as v]))
+  (:require [offcourse.styles.vocabulary :as v]))
 
 (defn dashboard [{:keys [templates colors units]}]
   [v/dashboard (merge (:column-component templates)

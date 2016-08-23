@@ -1,6 +1,6 @@
 (ns offcourse.styles.components.viewer
   (:refer-clojure :exclude [rem + - * /])
-  (:require [styles.vocabulary :as v]
+  (:require [offcourse.styles.vocabulary :as v]
             [garden
              [selectors :as s]
              [arithmetic :refer [+ - * /]]
