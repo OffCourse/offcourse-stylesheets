@@ -1,4 +1,4 @@
-(ns styles.global
+(ns offcourse.styles.global
   (:refer-clojure :exclude [+ - * /])
   (:require [garden
              [units :as u :refer [percent px]]

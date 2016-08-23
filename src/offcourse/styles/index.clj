@@ -1,4 +1,4 @@
-(ns styles.index
+(ns offcourse.styles.index
   (:require [garden.def :refer [defstyles]]
             [styles
              [config :refer [config]]

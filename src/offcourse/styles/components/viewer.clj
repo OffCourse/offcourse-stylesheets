@@ -1,4 +1,4 @@
-(ns styles.components.viewer
+(ns offcourse.styles.components.viewer
   (:refer-clojure :exclude [rem + - * /])
   (:require [styles.vocabulary :as v]
             [garden

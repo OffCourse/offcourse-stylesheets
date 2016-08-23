@@ -1,4 +1,4 @@
-(ns styles.typography
+(ns offcourse.styles.typography
   (:refer-clojure :exclude [+ - * /])
   (:require [garden.stylesheet :refer [at-font-face]]
             [styles.vocabulary :as v]))

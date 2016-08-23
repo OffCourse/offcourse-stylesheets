@@ -1,4 +1,4 @@
-(ns styles.components.dashboard
+(ns offcourse.styles.components.dashboard
   (:require [styles.vocabulary :as v]))
 
 (defn dashboard [{:keys [templates colors units]}]

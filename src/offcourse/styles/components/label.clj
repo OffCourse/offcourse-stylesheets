@@ -1,4 +1,4 @@
-(ns styles.components.label
+(ns offcourse.styles.components.label
   (:require [styles.vocabulary :as v]))
 
 (defn label-component [{:keys [templates fonts colors units]}]

@@ -1,4 +1,4 @@
-(ns styles.graphs
+(ns offcourse.styles.graphs
   (:refer-clojure :exclude [rem + - * /])
   (:require [garden
              [arithmetic :refer [* + /]]

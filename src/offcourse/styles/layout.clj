@@ -1,4 +1,4 @@
-(ns styles.layout
+(ns offcourse.styles.layout
   (:refer-clojure :exclude [rem + - * /])
   (:require [garden.units :as u :refer [vh]]
             [garden.arithmetic :refer [*]]

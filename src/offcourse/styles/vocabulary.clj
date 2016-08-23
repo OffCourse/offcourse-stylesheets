@@ -1,4 +1,4 @@
-(ns styles.vocabulary
+(ns offcourse.styles.vocabulary
   (:refer-clojure :exclude [first second last list])
   (:require [garden.selectors :as s]))
 

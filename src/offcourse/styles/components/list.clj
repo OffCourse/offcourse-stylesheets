@@ -1,4 +1,4 @@
-(ns styles.components.list
+(ns offcourse.styles.components.list
   (:refer-clojure :exclude [first last list])
   (:require [styles.vocabulary :as v]))
 

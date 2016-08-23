@@ -1,4 +1,4 @@
-(ns styles.components.menubar
+(ns offcourse.styles.components.menubar
   (:refer-clojure :exclude [rem + - * /])
   (:require [garden.arithmetic :refer [*]]
             [garden.units :as u :refer [percent]]

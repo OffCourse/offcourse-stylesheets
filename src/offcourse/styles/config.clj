@@ -1,4 +1,4 @@
-(ns styles.config
+(ns offcourse.styles.config
   (:require [styles.graphs :as graphs]))
 
 (def fonts {:NittiGrotesk     ["NittiGrotesk" "NGN"]

@@ -1,4 +1,4 @@
-(ns styles.components.form
+(ns offcourse.styles.components.form
   (:require [styles.vocabulary :as v]))
 
 (defn form [{:keys [templates colors units]}]

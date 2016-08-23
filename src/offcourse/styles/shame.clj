@@ -1,4 +1,4 @@
-(ns styles.shame
+(ns offcourse.styles.shame
   (:refer-clojure :exclude [rem + - * /])
   (:require [garden.arithmetic :refer [*]]
             [garden.units :as u :refer [percent px rem]]

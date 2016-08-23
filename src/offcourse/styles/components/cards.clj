@@ -1,4 +1,4 @@
-(ns styles.components.cards
+(ns offcourse.styles.components.cards
   (:refer-clojure :exclude [+ - * /])
   (:require [garden
              [arithmetic :refer [* +]]

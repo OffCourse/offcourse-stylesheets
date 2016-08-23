@@ -1,4 +1,4 @@
-(ns styles.components.index
+(ns offcourse.styles.components.index
   (:require [styles.components
              [cards :refer [cards]]
              [dashboard :refer [dashboard]]

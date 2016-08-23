@@ -1,4 +1,4 @@
-(ns styles.components.sheet
+(ns offcourse.styles.components.sheet
   (:refer-clojure :exclude [rem + - * /])
   (:require [garden.arithmetic :refer [*]]
             [garden.units :as u :refer [percent px rem]]
