@@ -44,7 +44,7 @@
    :mono-font                  (fnk [atom]              (* atom 22))
    :mono-line-height           (fnk [atom]              (* atom 30))
    :label-font                 (fnk [base-font]         (* base-font          0.8))
-   :label-line-height          (fnk [base-line-height]  (* base-line-height   0.5))
+   :label-line-height          (fnk [base-line-height]  (* base-line-height   1))
    })
 
 (def templates-graph

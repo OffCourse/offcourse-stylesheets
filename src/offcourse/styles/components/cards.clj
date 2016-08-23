@@ -38,7 +38,7 @@
                                        {:position            :absolute
                                         :height              "100%"
                                         :width               "100%"
-                                        :background         (:medium colors)})]]]
+                                        :background         (:dark colors)})]]]
     [:.card--backside                  {:display             :none
                                         :position            :relative}]
 
@@ -56,8 +56,9 @@
                                         :border              :none })]
      [v/last                           {:justify-content     :space-between}]]]
 
-   [:.card--rating              (merge (:row-component       templates))]
+   [:.card--title                      (:title               templates)]
 
+   [:.card--rating              (merge (:row-component       templates))]
    [:.card--rating-dot          (merge {:width              (:third units)
                                         :height             (:third units)
                                         :margin            [[0 (:third units) 0 0]]
@@ -105,13 +106,29 @@
     [v/hovered                         (:negative            templates)]]
 
 
+   [:.card--backside                  
+    [v/card--section            (merge {:border-color       (:night colors)})
+     [v/second                         {:align-items         :stretch}]
+     [v/last                           {:border              :none}]]
+    [v/label                           (:negative            templates)]]
 
    [:.card--meta                (merge (:column-component    templates)
                                        {:padding          [[ 0 (:third units)]]})]
    [:.card--img                        {:width              (* (:third units) 6)
                                         :height             (* (:third units) 6)}]
+   [:.card--author              (merge (:subtitle            templates)
+                                       {:color              (:blue colors)})]
+   [:.card--author-status       (merge (:label               templates)
+                                       {:padding-bottom    [[0 0 (:third units) 0]]})]
    [:.card--stats               (merge (:row-component       templates)
                                        (:justify-content     :space-between))]
-   [:.card--title                      (:title               templates)]
-   [:.card--smalltitle                 (:smalltitle          templates)]
-   [:.card--smalltext                  (:label               templates)]])
+   [:.card--stats-num           (merge (:smalltitle          templates)
+                                       {:color              (:yellow colors)
+                                        :padding           [[0 (:third units)]]})]
+   [:.card--stats-title         (merge (:label               templates))]
+   [:.card--text                       (:label                templates)]
+
+   [:.card--smalltitle                 (:smalltitle          templates)
+                                       {:color              (:yellow colors)}]
+   [:.card--smalltext                  (:label               templates)
+                                       {:color              (:blue colors)}]])
