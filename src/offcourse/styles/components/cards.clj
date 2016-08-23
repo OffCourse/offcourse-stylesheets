@@ -110,7 +110,8 @@
     [v/card--section            (merge {:border-color       (:night colors)})
      [v/second                         {:align-items         :stretch}]
      [v/last                           {:border              :none}]]
-    [v/label                           (:negative            templates)]]
+    [v/label                           (:negative            templates)
+     [v/hovered                        (:paper               templates)]]]
 
    [:.card--meta                (merge (:column-component    templates)
                                        {:padding          [[ 0 (* (:third units) 2)]]})]
