@@ -113,9 +113,9 @@
     [v/label                           (:negative            templates)]]
 
    [:.card--meta                (merge (:column-component    templates)
-                                       {:padding          [[ 0 (:third units)]]})]
-   [:.card--img                        {:width              (* (:third units) 6)
-                                        :height             (* (:third units) 6)}]
+                                       {:padding          [[ 0 (* (:third units) 2)]]})]
+   [:.card--img                        {:width              (* (:third units) 8)
+                                        :height             (* (:third units) 8)}]
    [:.card--author              (merge (:subtitle            templates)
                                        {:color              (:blue colors)})]
    [:.card--author-status       (merge (:label               templates)
