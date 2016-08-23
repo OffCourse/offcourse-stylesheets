@@ -1,10 +1,9 @@
 (def project 'offcourse/styles)
-(def version "0.1.5-SNAPSHOT")
+(def version "0.1.8-SNAPSHOT")
 
 (set-env!
- :source-paths #{"src/"})
-
-(set-env! :repositories [["clojars" {:url "https://clojars.org/repo/"
+ :resource-paths #{"src"}
+ :repositories [["clojars" {:url "https://clojars.org/repo/"
                                      :username (System/getenv "CLOJARS_USER")
                                      :password (System/getenv "CLOJARS_PASS")}]])
 
