@@ -18,7 +18,7 @@
                     :green-dark  "#3A676E"
                     :orange      "#E34B25"
                     :orange-dark "#A25418"
-                    :blue        "#72C733"
+                    :blue        "#72C7B3"
                     :red         "#E34D2F"})
 
 (def breakpoints [{:min-width 0    :max-width 767  :percent 55  :column-count 0}

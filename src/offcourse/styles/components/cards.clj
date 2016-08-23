@@ -3,6 +3,7 @@
   (:require [garden
              [arithmetic :refer [* +]]
              [stylesheet :refer [at-media]]]
+            [garden.selectors :as s]
             [offcourse.styles.vocabulary :as v]))
 
 (defn calculate-breakpoint [{:keys [min-width max-width column-count]} {:keys [column-gap column]}]
@@ -30,8 +31,7 @@
                                        (:paper               templates)
                                        {:position            :relative
                                         :padding           [[0 0]]
-                                        :flex                1
-                                        :box-shadow       [[(:sixth units) (:sixth units) 0 0 (:medium colors)]]})
+                                        :flex                1})
     [v/hovered                         (:highlighted         borders)
      [:.card--backside          (merge (:negative            templates)
                                        (:column-component    templates)
@@ -42,38 +42,69 @@
     [:.card--backside                  {:display             :none
                                         :position            :relative}]
 
-
    [v/card--section             (merge (:row-component       templates)
                                        (:border-thin         templates)
-                                       {:padding          [[(:two-third units)]]})]
+                                       {:padding          [[(:full units)]]})]
 
-   [:.card--frontside                  {:padding           [[0 (:two-third units)(:two-third units) 0]]}
+   [:.card--frontside                  
     [v/card--section
-     [v/first                   (merge {:padding          [[(:two-third units)]]})]
-     [v/second                  (merge (:column-component    templates)
-                                       {:padding           [[0 0 (:third units) 0]]})]
-     [v/last                           {:border              :none}]]]
+     [v/first                   (merge {:padding          [[(:full units) (:one-and-half units) (:full units) (:full units)]]})]
+     [v/second                  (merge {:justify-content     :space-between
+                                        :align-items         :center
+                                        :padding          [[(:half units) (:full units)]]})]
+     [v/third                   (merge {:padding          [[(:full units) (:full units) 0 (:full units)]]
+                                        :border              :none })]
+     [v/last                           {:justify-content     :space-between}]]]
 
-   [:.card--info-corner         (merge {:position            :absolute
+   [:.card--rating              (merge (:row-component       templates))]
+
+   [:.card--rating-dot          (merge {:width              (:third units)
+                                        :height             (:third units)
+                                        :margin            [[0 (:third units) 0 0]]
+                                        :border-radius      "100%"
+                                        :background         (:medium colors)})
+    [(s/& (s/attr :data-dot-active := "true")) {:background (:yellow colors)}]]   
+
+   [:.card--following           (merge (:row-component       templates)
+                                       (:label               templates)
+                                       (:border-thin         templates)
+                                       {:align-items         :center
+                                        :justify-content     :center
+                                        :padding          [[(:third units) (:half units)]]
+                                        :background         (:blue colors)})]
+
+   [:.card--picked              (merge {:height             (:full units)})]
+
+   [:.card--earmark             (merge {:position            :absolute
+                                        :top                 0
                                         :right               0
-                                        :top                 (:two-third units) 
-                                        :width              (:full units)
-                                        :height             (:full units)
+                                        :width              (:one-and-half units)
+                                        :height             (:one-and-half units)
                                         :display             :flex
                                         :align-items         :center
                                         :justify-content     :center
-                                        :background         (:medium colors)
+                                        :background         (str "linear-gradient(45deg, " (:red colors) " 0%, " (:red colors) " 50%," (:light colors) " 51%)")
                                         :color              (:day    colors)})]
-   [:.card--info-corner-back    (merge {:position            :absolute
-                                        :right               0
-                                        :top                 (:two-third units) 
-                                        :width              (:full units)
-                                        :height             (:full units)
+
+   [:.card--button              (merge (:row-component       templates)
+                                       (:recycled-paper      templates)
+                                       (:subtitle            templates)
+                                       (:negative            templates)
+                                       {:font-size          (:subtitle-font units)
+                                        :padding          [[(:third units) (:two-third units)]]
+                                        :cursor              :pointer })
+    [v/hovered                         (:paper               templates)]]
+
+   [:.card--info-corner         (merge (:subtitle            templates)
+                                       {:padding          [[(:third units) (:two-third units)]]
                                         :display             :flex
                                         :align-items         :center
                                         :justify-content     :center
-                                        :background         (:day colors)
-                                        :color              (:medium colors)})]
+                                        :background         (:light colors)
+                                        :color              (:night    colors)})
+    [v/hovered                         (:negative            templates)]]
+
+
 
    [:.card--meta                (merge (:column-component    templates)
                                        {:padding          [[ 0 (:third units)]]})]
@@ -81,6 +112,6 @@
                                         :height             (* (:third units) 6)}]
    [:.card--stats               (merge (:row-component       templates)
                                        (:justify-content     :space-between))]
-   [:.card--title                      (:subtitle            templates)]
+   [:.card--title                      (:title               templates)]
    [:.card--smalltitle                 (:smalltitle          templates)]
    [:.card--smalltext                  (:label               templates)]])

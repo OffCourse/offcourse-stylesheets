@@ -1,15 +1,19 @@
 (ns offcourse.styles.components.list
   (:refer-clojure :exclude [first last list])
-  (:require [offcourse.styles.vocabulary :as v]))
+  (:require [offcourse.styles.vocabulary :as v]
+            [garden.units :as u :refer [percent]]))
 
 (defn list-component [{:keys [templates borders colors fonts units]}]
 
-  [[v/list         (merge (:column-component templates))]
+  [[v/list         (merge (:column-component templates)
+                          {:width           (percent 100)})]
    [v/list--item   (merge (:row-component    templates)
-                          (:border-thin      templates)
+                          (:recycled-paper   templates)
                           (:text             templates)
-                          {:align-items      :center
-                           :padding       [[(:third units)(:two-third units)]]})
+                          {:margin-bottom   (:sixth units)
+                           :font-size       (:subtitle-font units)
+                           :padding         (:third units)
+                           :cursor           :pointer })
     [v/hovered            (:selected         templates)]]
 
    [v/edit-list

@@ -10,7 +10,7 @@
 (defn -compose [graph config] ((graph/compile graph) config))
 
 (def units-graph
-  {:column               (fnk [full] (* full 10))
+  {:column               (fnk [full] (* full 14))
    :column-gap           (fnk [full] (* 1 full))
    :padded-column        (fnk [full] (* 12 full))
    :sidebar              (fnk [column column-gap] (+ column (* 2 column-gap)))
@@ -50,8 +50,8 @@
 (def templates-graph
   {:highlighted      (fnk [colors] {:background-color (:primary colors)
                                     :color            (:night colors)})
-   :selected         (fnk [colors] {:background-color (:light colors)
-                                    :color            (:night colors)})
+   :selected         (fnk [colors] {:background-color (:night colors)
+                                    :color            (:light colors)})
    :paper            (fnk [colors] {:background-color (:day colors)
                                     :color            (:night colors)})
    :sheet            (fnk [paper borders] (merge paper
@@ -117,7 +117,7 @@
    :tiny-font        (fnk [units fonts label] label)
 
    :border-default      (fnk [units colors]    {:border-bottom      [[:solid (:sixth units) (:medium colors)]]})
-   :border-thin         (fnk [units colors]    {:border-bottom      [[:solid (:atom units)  (:medium colors)]]})
+   :border-thin         (fnk [units colors]    {:border-bottom      [[:solid "1px" (:light colors)]]})
    :border-quotes       (fnk [units colors]    {:border-left        [[:solid (:sixth units) (:medium colors)]]})
    :border-highlighted  (fnk [units colors]    {:border-color       [(:primary colors)]})
 
@@ -152,7 +152,11 @@
                       :light   (:light-gray  raw-colors)
                       :very-light (:very-light-gray raw-colors)
                       :day     (:white raw-colors)
-                      :primary (base-color raw-colors)})
+                      :primary (base-color raw-colors)
+                      :yellow  (:yellow raw-colors)
+                      :blue    (:blue raw-colors)
+                      :green   (:green raw-colors)
+                      :red     (:red raw-colors)})
    :breakpoints (fnk [raw-breakpoints]
                      (map (fn [{:keys [min-width max-width percent column-count]}]
                             {:min-width (px min-width)
