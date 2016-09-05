@@ -11,8 +11,7 @@
                          {:margin-bottom   (:sixth units)
                           :align-items     :center
                           :font-size       (:subtitle-font units)
-                          :padding         (:half units)
-                          :height          (:one-and-half units)})
+                          :padding         [[ 0 (:half units)]]})
     [v/hovered (:selected templates)]]
 
    [v/edit-list

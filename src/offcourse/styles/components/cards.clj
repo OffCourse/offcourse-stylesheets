@@ -44,4 +44,5 @@
                             {:padding [[0 0 (:full units) 0]]})
      [v/first {:padding-top    (:two-third units)
                :padding-bottom (:two-third units)}]
-     [v/last {}]]]])
+     [v/last {}]]]
+   [v/card--title    (merge (:title templates))]])
