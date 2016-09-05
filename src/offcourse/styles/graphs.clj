@@ -10,7 +10,7 @@
 (defn -compose [graph config] ((graph/compile graph) config))
 
 (def units-graph
-  {:column               (fnk [full] (* full 14))
+  {:column               (fnk [full] (* full 12))
    :column-gap           (fnk [full] (* 1 full))
    :padded-column        (fnk [full] (* 12 full))
    :sidebar              (fnk [column column-gap] (+ column (* 2 column-gap)))
@@ -39,7 +39,7 @@
    :title-line-height          (fnk [base-line-height]  (* base-line-height   1.5))
    :subtitle-font              (fnk [base-font]         (* base-font          1))
    :subtitle-line-height       (fnk [base-line-height]  (* base-line-height   1))
-   :base-font                  (fnk [atom]              (* atom 24))
+   :base-font                  (fnk [atom]              (* atom 21))
    :base-line-height           (fnk [atom]              (* atom 30))
    :mono-font                  (fnk [atom]              (* atom 22))
    :mono-line-height           (fnk [atom]              (* atom 30))
@@ -172,7 +172,7 @@
                       :raw   (vals raw-fonts)})
 
    :borders     (fnk [units colors]
-                     {:default [[:solid (:sixth units) (:medium colors)]]
+                     {:default [[:solid (* 1 (:atom units)) (:medium colors)]]
                       :highlighted {:border-color [(:primary colors)]}})
    :units       (fnk [base-unit] (-compose units-graph {:base-unit base-unit}))
    :templates   (fnk [units fonts colors borders]

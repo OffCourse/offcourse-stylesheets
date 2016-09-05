@@ -10,7 +10,7 @@
                                {:justify-content      :space-between
                                 :align-items          :center
                                 :flex                 1
-                                :background          (:blue colors)
+                                :background          (:day colors)
                                 :padding            [[0 (:full units) 0 0]]})]
    [v/menubar--section         {:display              :flex
                                 :align-items          :center}

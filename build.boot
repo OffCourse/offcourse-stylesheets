@@ -4,8 +4,8 @@
 (set-env!
  :resource-paths #{"src"}
  :repositories [["clojars" {:url "https://clojars.org/repo/"
-                                     :username (System/getenv "CLOJARS_USER")
-                                     :password (System/getenv "CLOJARS_PASS")}]])
+                            :username (System/getenv "CLOJARS_USER")
+                            :password (System/getenv "CLOJARS_PASS")}]])
 
 (task-options!
    push {:repo           "clojars"

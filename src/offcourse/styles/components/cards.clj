@@ -14,15 +14,25 @@
                         :min-width    actual-width
                         :max-width    actual-width}])))
 
+(defn calculate-first-breakpoint [{:keys [min-width max-width column-count]} {:keys [column-gap column]}]
+  (at-media {:min-width min-width :max-width max-width}
+            (let [gap-count    (dec column-count)
+                  actual-width (+ (* column-count column) (* gap-count column-gap))]
+              [v/cards {:display        :block
+                        :column-count   column-count
+                        :min-width      :unset
+                        :max-width      :none}])))
+
 (defn cards [{:keys [templates breakpoints borders colors units]}]
   [[v/cards (merge (:row-component templates)
                    (:recycled-paper templates)
                    {:padding          (:full units)
                     :column-gap       (:column-gap units)})
     [v/container {:display :inline-block
-                  :width (:column units)}]]
+                  :column-width   "50%"}]]
 
    (for [breakpoint breakpoints] (calculate-breakpoint breakpoint units))
+   (calculate-first-breakpoint (first breakpoints) units)
 
    [v/card (merge (:column-component templates)
                   (:sheet templates)
