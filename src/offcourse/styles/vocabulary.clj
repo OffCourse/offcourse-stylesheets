@@ -27,6 +27,7 @@
 (s/defclass card)
 (s/defclass card--section)
 (s/defclass card--title)
+(s/defclass card--edit-sign)
 
 (s/defclass viewer)
 (s/defclass viewer--meta)

@@ -4,8 +4,9 @@
 (defn button [{:keys [templates colors units fonts]}]
 
   [[v/textbar-button (merge (:textbar templates)
-                            {:font-size (:subtitle-font units)
-                             :margin-right (:sixth units)})
+                            {:font-size    (:subtitle-font units)
+                             :margin-right (:sixth units)
+                             :cursor        :pointer})
     [v/hovered (merge (:paper templates))]
     [v/disabled {:background-color (:medium colors)
                  :color (:day colors)}]]

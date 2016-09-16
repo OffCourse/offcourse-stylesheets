@@ -29,9 +29,14 @@
                 v/card {:width "100%"}]))
 
    [v/card--section (merge (:component templates)
-                          {:padding [[0 0 (:full units) 0]]})
+                           {:position          :relative
+                            :padding [[0 0 (:full units) 0]]})
     [v/first {:padding-top    (:two-third units)}
              :padding-bottom (:two-third units)]
     [v/last {}]]
 
-   [v/card--title (merge (:title templates))]]) 
+   [v/card--title (merge (:title templates))]
+   [v/card--edit-sign   {:position :absolute
+                         :top (:full units)
+                         :right 0
+                         :width (:half units)}]]) 
