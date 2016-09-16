@@ -10,7 +10,7 @@
                          (:subtitle templates)
                          {:margin-bottom   (:sixth units)
                           :align-items     :center
-                          :padding         [[ 0 (:half units)]]})
+                          :padding         [[ (:sixth units) (:half units)]]})
     [v/hovered (:selected templates)]]
 
    [v/edit-list
