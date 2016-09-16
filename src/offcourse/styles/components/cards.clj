@@ -5,38 +5,20 @@
              [stylesheet :refer [at-media]]]
             [offcourse.styles.vocabulary :as v]))
 
-(defn calculate-breakpoint [{:keys [min-width max-width column-count]} {:keys [column-gap column]}]
-  (at-media {:min-width min-width :max-width max-width}
-            (let [gap-count    (dec column-count)
-                  actual-width (+ (* column-count column) (* gap-count column-gap))]
-              [v/cards {:display      (if (= column-count 0) :none :block)
-                        :column-count column-count
-                        :min-width    actual-width
-                        :max-width    actual-width}])))
-
-(defn calculate-first-breakpoint [{:keys [min-width max-width column-count]} {:keys [column-gap column]}]
-  (at-media {:min-width min-width :max-width max-width}
-            (let [gap-count    (dec column-count)
-                  actual-width (+ (* column-count column) (* gap-count column-gap))]
-              [v/cards {:display        :block
-                        :column-count   column-count
-                        :min-width      :unset
-                        :max-width      :none}])))
-
 (defn cards [{:keys [templates breakpoints borders colors units]}]
   [[v/cards (merge (:row-component templates)
                    (:recycled-paper templates)
                    {:padding          (:full units)
-                    :column-gap       (:column-gap units)})
-    [v/container {:display :inline-block
-                  :column-width   "50%"}]]
-
-   (for [breakpoint breakpoints] (calculate-breakpoint breakpoint units))
-   (calculate-first-breakpoint (first breakpoints) units)
+                    :column-gap       (:column-gap units)
+                    :align-items       :flex-start
+                    :align-content     :flex-start
+                    :flex-wrap         :wrap})
+    [v/container {:padding [[0 (:full units) (:full units) 0]]}]]
 
    [v/card (merge (:column-component templates)
                   (:sheet templates)
-                  {:padding [[0 (:full units)]]
+                  {:width (:column units)
+                   :padding [[0 (:full units)]]
                    :flex 1})
     [v/hovered (:highlighted borders)]
 
