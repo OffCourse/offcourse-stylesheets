@@ -7,10 +7,9 @@
   [[v/list        (merge (:column-component templates))]
    [v/list--item  (merge (:row-component templates)
                          (:recycled-paper templates)
-                         (:title templates)
+                         (:subtitle templates)
                          {:margin-bottom   (:sixth units)
                           :align-items     :center
-                          :font-size       (:subtitle-font units)
                           :padding         [[ 0 (:half units)]]})
     [v/hovered (:selected templates)]]
 
