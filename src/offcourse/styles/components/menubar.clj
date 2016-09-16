@@ -8,15 +8,18 @@
   [[v/menubar           (merge (:row-component        templates)
                                (:border-thin          templates)
                                {:justify-content      :space-between
-                                :align-items          :center
                                 :flex                 1
                                 :background          (:day colors)
                                 :padding            [[0 (:full units) 0 0]]})]
    [v/menubar--section         {:display              :flex
-                                :align-items          :center}
-    [v/first            (merge (:negative             templates)
-                               {:height              (percent 100)
-                                :padding            [[0 (* 10 (:atom units))]]})]]
+                                :align-items          :center}]
+                        
+   [v/menubar--logo     (merge (:textbar templates)
+                               {:justify-content      :center
+                                :height               "100%"
+                                :padding            [[0 (:two units) 0 (:two units)]]
+                                :cursor               :pointer})
+    [v/hovered                 (:paper                templates)]]
    [:.menubar--link     (merge (:text                 templates) 
                                {:margin             [[0 (:one-and-half units) 0 0]]})
     [v/hovered          (merge (:border-thin          templates)

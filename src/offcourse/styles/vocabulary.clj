@@ -68,6 +68,7 @@
 
 (s/defclass menubar)
 (s/defclass menubar--section)
+(s/defclass menubar--logo)
 
 (s/defclass form)
 (s/defclass form--input)
