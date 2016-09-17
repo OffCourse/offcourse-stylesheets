@@ -28,15 +28,22 @@
                  [v/container {:width "50%"}]
                 v/card {:width "100%"}]))
 
-   [v/card--section (merge (:component templates)
+   [v/card--section (merge (:component         templates)
                            {:position          :relative
-                            :padding [[0 0 (:full units) 0]]})
-    [v/first {:padding-top    (:two-third units)}
-             :padding-bottom (:two-third units)]
-    [v/last {}]]
+                            :padding         [[0 0 (:full units) 0]]})
+    [v/first               {:padding-top    (:two-third units)
+                            :padding-bottom (:two-third units)}]]
 
    [v/card--title (merge (:title templates))]
+
    [v/card--edit-sign   {:position :absolute
                          :top (:full units)
                          :right 0
-                         :width (:half units)}]]) 
+                         :width (:half units)}]
+   [v/card--edit-field  (merge (:row-component templates)
+                               (:recycled-paper templates)
+                               (:title templates)
+                               {:margin-bottom   (:sixth units)
+                                :align-items     :center
+                                :padding         [[ (:sixth units) (:half units)]]})]])
+    
