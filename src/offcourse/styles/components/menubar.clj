@@ -17,7 +17,7 @@
    [v/menubar--logo     (merge (:textbar templates)
                                {:justify-content      :center
                                 :height               "100%"
-                                :padding            [[0 (:two units) 0 (:two units)]]
+                                :padding            [[0 (:two-third units)]]
                                 :cursor               :pointer})
     [v/hovered                 (:paper                templates)]]
    [:.menubar--link     (merge (:text                 templates) 
