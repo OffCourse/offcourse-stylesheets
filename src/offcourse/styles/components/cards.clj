@@ -8,9 +8,9 @@
 (defn cards [{:keys [templates breakpoints borders colors units]}]
   [[v/cards (merge (:row-component templates)
                    (:recycled-paper templates)
-                   {:padding          (:full units)
+                   {:padding        [[(:full units) 0 (:full units) (:full units)]]
                     :column-gap       (:column-gap units)
-                    :align-items       :flex-start
+                    :align-items       :stretch
                     :align-content     :flex-start
                     :flex-wrap         :wrap})
     [v/container {:padding [[0 (:full units) (:full units) 0]]}]]
