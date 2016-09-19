@@ -36,6 +36,9 @@
 
    [v/card--title (merge (:title templates))]
 
+   [v/card--actions (merge (:row-component templates)
+                           {:flex-wrap :wrap})]
+
    [v/card--edit-sign   {:position :absolute
                          :top (:full units)
                          :right 0
