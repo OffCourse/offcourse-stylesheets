@@ -18,7 +18,8 @@
 
    [v/card (merge (:column-component templates)
                   (:sheet templates)
-                  {:width (:column units)
+                  {:justify-content :space-between
+                   :width (:column units)
                    :padding [[0 (:full units)]]
                    :flex 1})
     [v/hovered (:highlighted borders)]]
