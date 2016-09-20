@@ -13,7 +13,7 @@
                     :align-items       :stretch
                     :align-content     :flex-start
                     :flex-wrap         :wrap})
-    [v/container {:max-height          (* 20 (:full units))
+    [v/container {:max-height          (* 25 (:full units))
                   :padding [[0 (:full units) (:full units) 0]]}]]
 
    [v/card (merge (:column-component templates)
@@ -49,5 +49,12 @@
                                (:title templates)
                                {:margin-bottom   (:sixth units)
                                 :align-items     :center
-                                :padding         [[ (:sixth units) (:half units)]]})]])
-    
+                                :padding         [[ (:sixth units) (:half units)]]})]
+   [v/card--profile           (merge  (:row-component templates))]
+   [v/card--profile-section   (merge  (:column-component templates))
+    [v/second                         {:padding [[0 0 0 (:full units)]]}]]
+   [v/card--profile-image             {:width (:three units)}]
+   [v/card--profile-subtitle  (merge  (:text templates))]
+   [v/card--profile-username  (merge  (:subtitle templates))]
+   [v/card--profile-stats     (merge  (:label templates)
+                                      (:row-component templates))]])

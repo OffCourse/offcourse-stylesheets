@@ -31,6 +31,13 @@
 (s/defclass card--edit-field)
 (s/defclass card--actions)
 
+(s/defclass card--profile)
+(s/defclass card--profile-section)
+(s/defclass card--profile-image)
+(s/defclass card--profile-subtitle)
+(s/defclass card--profile-username)
+(s/defclass card--profile-stats)
+
 (s/defclass viewer)
 (s/defclass viewer--meta)
 (s/defclass viewer--content)
