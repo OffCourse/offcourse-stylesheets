@@ -13,7 +13,7 @@
                     :align-items       :stretch
                     :align-content     :flex-start
                     :flex-wrap         :wrap})
-    [v/container {:max-height          (* 30 (:full units))
+    [v/container {:max-height          (* 20 (:full units))
                   :padding [[0 (:full units) (:full units) 0]]}]]
 
    [v/card (merge (:column-component templates)
