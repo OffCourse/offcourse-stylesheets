@@ -26,9 +26,7 @@
                   {:justify-content :space-between
                    :width (:column units)
                    :flex 1})
-    [v/hovered (:highlighted borders)]]
-
-  
+    [v/hovered (:highlighted borders)]] 
 
    [v/card--section (merge (:component         templates)
                            (:border-thin       templates)
@@ -52,7 +50,8 @@
    [v/card--actions     (merge (:row-component templates))]
 
    [v/card--social       (merge (:row-component templates)
-                                {:justify-content :space-between})]
+                                {:justify-content :space-between
+                                 :align-items     :center})]
    [v/card--social-icons (merge (:row-component templates))]
    [v/card--social-img   (merge {:width (:full units)
                                  :height (:full units)
