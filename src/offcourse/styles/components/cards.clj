@@ -37,7 +37,13 @@
 
    [v/card--title (merge (:title templates))]
 
-
+   [v/card--edit-field  (merge (:row-component templates)
+                               (:recycled-paper templates)
+                               (:title templates)
+                               {:margin-bottom   (:sixth units)
+                                :align-items     :center
+                                :padding         [[ (:sixth units) (:half units)]]})]
+   
    [v/card--profile           (merge  (:row-component templates))]
    [v/card--profile-section   (merge  (:column-component templates))
     [v/second                         {:padding [[0 0 0 (:full units)]]}]]

@@ -28,6 +28,8 @@
 (s/defclass card--section)
 (s/defclass card--title)
 
+(s/defclass card--edit-field)
+
 (s/defclass card--profile)
 (s/defclass card--profile-section)
 (s/defclass card--profile-image)
