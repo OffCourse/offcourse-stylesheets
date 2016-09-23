@@ -79,6 +79,8 @@
 
 ;; this one must disappear
 (s/defclass dashboard)
+(s/defclass dashboard--main)
+(s/defclass dashboard--edit)
 
 (s/defclass menubar)
 (s/defclass menubar--section)
