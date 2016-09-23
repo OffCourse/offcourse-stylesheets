@@ -117,7 +117,7 @@
    :tiny-font        (fnk [units fonts label] label)
 
    :border-default      (fnk [units colors]    {:border-bottom      [[:solid (:sixth units) (:medium colors)]]})
-   :border-thin         (fnk [units colors]    {:border-bottom      [[:solid "1px" (:light colors)]]})
+   :border-thin         (fnk [units colors]    {:border-bottom      [[:solid (:atom units) (:light colors)]]})
    :border-quotes       (fnk [units colors]    {:border-left        [[:solid (:sixth units) (:medium colors)]]})
    :border-highlighted  (fnk [units colors]    {:border-color       [(:primary colors)]})
 

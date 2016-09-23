@@ -10,19 +10,10 @@
                    (:recycled-paper templates)
                    {:padding        [[(:full units) 0 (:full units) (:full units)]]
                     :column-gap       (:column-gap units)
-                    :align-items       :stretch
+                    :align-items       :flex-start
                     :align-content     :flex-start
                     :flex-wrap         :wrap})
-    [v/container {:max-height          (* 25 (:full units))
-                  :padding [[0 (:full units) (:full units) 0]]}]]
-
-   [v/card (merge (:column-component templates)
-                  (:sheet templates)
-                  {:justify-content :space-between
-                   :width (:column units)
-                   :padding [[0 (:full units)]]
-                   :flex 1})
-    [v/hovered (:highlighted borders)]]
+    [v/container {:padding [[0 (:full units) (:full units) 0]]}]]
 
    (let [{:keys [min-width max-width percent]} (first breakpoints)]
      (at-media {:min-width min-width :max-width max-width}
@@ -30,9 +21,19 @@
                  [v/container {:width "50%"}]
                 v/card {:width "100%"}]))
 
+   [v/card (merge (:column-component templates)
+                  (:sheet templates)
+                  {:justify-content :space-between
+                   :width (:column units)
+                   :flex 1})
+    [v/hovered (:highlighted borders)]]
+
+  
+
    [v/card--section (merge (:component         templates)
+                           (:border-thin       templates)
                            {:position          :relative
-                            :padding         [[0 0 (:full units) 0]]})
+                            :padding          (:full units)})
     [v/first               {:padding-top    (:two-third units)
                             :padding-bottom (:two-third units)}]]
 
