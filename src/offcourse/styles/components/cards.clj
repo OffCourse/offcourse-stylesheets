@@ -57,4 +57,5 @@
    [v/card--social-img   (merge {:width (:full units)
                                  :height (:full units)
                                  :margin-right (:two-third units)})]
-   [v/card--social-url   (merge (:subtitle templates))]])
+   [v/card--social-url   (merge (:subtitle templates)
+                                {:text-decoration :underline})]])
