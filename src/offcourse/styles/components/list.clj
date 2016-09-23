@@ -8,7 +8,7 @@
    [v/list--item  (merge (:row-component templates)
                          (:recycled-paper templates)
                          (:subtitle templates)
-                         {:margin-bottom   (:sixth units)
+                         {:margin-bottom   (:fifteenth units)
                           :align-items     :center
                           :padding         [[ (:sixth units) (:half units)]]})
     [v/hovered (:selected templates)]]
