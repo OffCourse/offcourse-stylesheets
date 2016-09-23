@@ -13,7 +13,7 @@
                                       :flex               1})]
    [v/viewer--content                {:display            :block
                                       :padding         [[(:two units) (:three units)]]
-                                      :max-width         (:max-content-width   units)}
+                                      :width             (:max-content-width   units)}
 
     (for [header v/viewer-headers]   
     [[header                 (merge  (:title              templates)
