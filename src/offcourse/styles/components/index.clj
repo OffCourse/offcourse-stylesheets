@@ -9,7 +9,8 @@
              [form :refer [form]]
              [list :refer [list-component]]
              [menubar :refer [menubar]]
-             [viewer :refer [viewer]]]))
+             [viewer :refer [viewer]]
+             [overlay :refer [overlay]]]))
 
 (defn navigation-panel [{:keys [templates units fonts colors]}]
   [[:.navigation-panel (merge (:component templates) {})]])
@@ -17,5 +18,5 @@
 (defn components [config]
   (let [components [list-component sheet form strip
                     button dashboard menubar navigation-panel
-                    viewer label-component cards]]
+                    viewer label-component cards overlay]]
     (for [component components] (component config))))
