@@ -15,6 +15,7 @@
    :padded-column        (fnk [full] (* 12 full))
    :sidebar              (fnk [column column-gap] (+ column (* 2 column-gap)))
    :max-content-width    (fnk [full] (* 33 full))
+   :modal-content-width    (fnk [full] (* 30 full))
    :map                  (fnk [column] (/ column 2))
    :four                 (fnk [full]  (* full 4))
    :five                 (fnk [full]  (* full 5))
