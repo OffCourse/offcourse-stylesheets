@@ -17,10 +17,12 @@
                                         :background         "rgba(0,0,0,0.8)"})]
   [:.edit-modal                 (merge (:sheet              templates)
                                        {:width             (:modal-content-width units)})]
-  [:.edit-modal--section        (merge (:border-thin        templates)
+  [:.edit-modal--section        (merge (:column-component   templates)
+                                       (:border-thin        templates)
                                        {:padding         [[(:full units)]]})]
   [:.edit-modal--action-title   (merge (:subtitle           templates)
                                        {:padding          [[0 (:half units) (:half units)]]})]
   [:.edit-modal--course-title   (merge (:title              templates)
-                                       {:padding          [[0 (:half units)]]})]
+                                       {:flex               1
+                                        :padding          [[0 (:half units)]]})]
   [:.edit-modal--actions        (merge (:row-component      templates))]])
