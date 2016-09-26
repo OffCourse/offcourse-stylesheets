@@ -11,21 +11,25 @@
                          {:margin-bottom   (:fifteenth units)
                           :align-items     :center
                           :padding         [[ (:sixth units) (:half units)]]})
-    [v/hovered (:selected templates)]]
+    [v/hovered           (:selected templates)]]
 
    [v/edit-list
-    [v/list--item (merge {:justify-content :space-between
-                          :padding 0
-                          :background-color (:day colors)})
-     [v/icon-button {:font-size (:two-third units)}]
-     [:span
-      [v/first (merge (:recycled-paper templates)
-                      {:flex 1
-                       :display :flex
-                       :padding (:half units)
-                       :align-items :center
-                       :height (:one-and-half units)
-                       :margin-right (:sixth units)})]]]]
+     [v/list--item         (merge  (:row-component       templates)
+                                   (:recycled-paper      templates)
+                                   {:justify-content     :space-between
+                                    :margin-bottom      (:sixth units)
+                                    :padding             0
+                                    :background-color   (:light colors)})]
+     [v/icon-button                {:font-size          (:two-third units)}]
+     [:.list--item-section  (merge (:column-component    templates)
+                                   {:flex                1})
+      [v/last                      {:flex                0}]]
+     [:.list--course        (merge (:title               templates)
+                                   {:padding            (:half units)
+                                    :background         (:light colors)})]
+     [:.list--url           (merge (:subtitle            templates)
+                                   {:padding           [[0 (:half units) (:half units) (:half units)]]
+                                    :background         (:light colors)})]]
 
    [v/todo-list
     [v/list--item {:justify-content :flex-start}

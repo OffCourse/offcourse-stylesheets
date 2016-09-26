@@ -21,11 +21,10 @@
                           :height           (:one-and-half units)
                           :width            (:one-and-half units)
                           :margin-right      0
-                          :color            (:day colors)
-                          :background-color (:night colors)})
-    [v/disabled          {:background-color (:medium colors)
-                          :color            (:day colors)}]
-    [v/hovered           {:background-color (:primary colors)}]]
+                          :background       (:light colors)
+                          :color            (:medium colors)})
+    [v/disabled          {:color            (:day colors)}]
+    [v/hovered           {:color            (:primary colors)}]]
 
    [v/checkbox-button (merge (:component        templates)
                              (:buttonless       templates)
