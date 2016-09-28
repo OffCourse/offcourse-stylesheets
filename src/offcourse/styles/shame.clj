@@ -5,10 +5,7 @@
             [offcourse.styles.vocabulary :as v]))
 
 (defn shame [{:keys [templates borders colors fonts units]}]
-  [[:.checkpoint                  (merge (:row-component      templates)
-                                         {:padding-top       (:full units)
-                                          :width             (percent 100)})]
-   [:.meta-widget--container      (merge {:padding           [[(:full units) 0 0 0]]
+  [[:.meta-widget--container      (merge {:padding           [[(:full units) 0 0 0]]
                                           :max-width         (:max-content-width units)})]
    [:.meta-widget                 (merge (:column-component   templates)
                                          {:justify-content    :flex-start

@@ -7,13 +7,22 @@
              [units :as u :refer [percent px rem]]]))
 
 (defn viewer [{:keys [templates colors fonts units]}]
-  [[v/viewer                 (merge  (:column-component   templates)
-                                     (:paper              templates)
-                                     {:overflow-y         :auto
+  [[v/viewer                 (merge  (:row-component      templates)
+                                     {:padding           [[(:full units) 0 (:full units) 0]]
+                                      :overflow-y         :auto
                                       :flex               1})]
-   [v/viewer--content                {:display            :block
+   [:.viewer--section                {}]
+   [:.viewer--loading                {:min-height       (:two units)
+                                      :width            (percent 100)
+                                      :background       (:primary colors)}]
+   [:.viewer--loading-img            {:min-height       (:two units)
+                                      :width            (percent 100)
+                                      :opacity           0.1
+                                      :background       "url(/images/loader-anim-2.gif)"}]
+   [v/viewer--content        (merge  (:paper              templates)
+                                     {:display            :block
                                       :padding         [[(:two units) (:three units)]]
-                                      :width             (:max-content-width   units)}
+                                      :width             (:max-content-width   units)})
 
     (for [header v/viewer-headers]   
     [[header                 (merge  (:title              templates)
