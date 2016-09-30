@@ -10,15 +10,26 @@
   [[v/viewer                 (merge  (:row-component      templates)
                                      {:padding           [[(:full units) 0 (:full units) 0]]
                                       :overflow-y         :auto
-                                      :flex               1})]
+                                      :flex               1
+                                      :min-height        (:three units)
+                                      :width             (:max-content-width   units)})]
    [:.viewer--section                {}]
-   [:.viewer--loading                {:min-height       (:two units)
+
+
+
+   [:.viewer--loading                {:min-height       (:third units)
                                       :width            (percent 100)
                                       :background       (:primary colors)}]
-   [:.viewer--loading-img            {:min-height       (:two units)
+   [:.viewer--loading-img            {:min-height       (:third units)
                                       :width            (percent 100)
                                       :opacity           0.1
                                       :background       "url(/images/loader-anim-2.gif)"}]
+   [:.viewer--error                  {:min-height       (:third units)
+                                      :width            (percent 100)
+                                      :background       (:red colors)}]
+
+
+
    [v/viewer--content        (merge  (:paper              templates)
                                      {:display            :block
                                       :padding         [[(:two units) (:three units)]]
