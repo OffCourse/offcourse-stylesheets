@@ -28,7 +28,7 @@
                                       :width            (percent 100)
                                       :background       (:red colors)}]
 
-
+   [:.viewer--source-btn             {:padding        [[(:full units) 0]]}]                                  
 
    [v/viewer--content        (merge  (:paper              templates)
                                      {:display            :block
