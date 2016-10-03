@@ -18,18 +18,21 @@
 
    [v/main (merge (:row-component templates)
                   (:recycled-paper templates)
-                  {:flex 1})
-    [v/main--section
-     [v/last (merge (:row-component templates)
-                    (:recycled-paper templates)
-                    {:flex 2
-                     :overflow       :scroll})]]]
+                  {:flex 1})]
+   [v/main--section
+    [v/last (merge (:row-component templates)
+                   (:recycled-paper templates)
+                   {:flex 2
+                    :overflow :scroll})]]
 
    (let [{:keys [min-width max-width percent]} (first breakpoints)]
     (at-media {:min-width min-width :max-width max-width}
-     [[v/layout                    {:overflow :visible}]
-      [v/main               (merge (:column-component    templates)
-                                   {:overflow :visible})]]))
+     [[v/layout--section           
+       [v/last                     {:overflow :scroll}]]
+      [v/main               (merge (:column-component    templates))]
+      [v/main--section
+       [v/last                     {:display :block
+                                    :overflow :visible}]]]))
 
    [v/container (merge (:row-component templates)
                        {:padding [[0 0 (:two-third units) 0]]})]])

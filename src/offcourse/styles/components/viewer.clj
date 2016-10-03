@@ -10,10 +10,9 @@
 (defn viewer [{:keys [templates colors fonts units breakpoints]}]
   [[v/viewer                 (merge  (:row-component      templates)
                                      {:padding           [[(:full units) 0 (:full units) 0]]
-                                      :overflow-y         :auto
                                       :flex               1
                                       :min-height        (:three units)
-                                      :width             (:max-content-width   units)})]
+                                      :max-width         "100vw"})]
 
    [:.viewer--section                {}]
 
