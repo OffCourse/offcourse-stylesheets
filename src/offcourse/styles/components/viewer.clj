@@ -3,22 +3,30 @@
   (:require [offcourse.styles.vocabulary :as v]
             [garden
              [selectors :as s]
+             [stylesheet :refer [at-media]]
              [arithmetic :refer [+ - * /]]
              [units :as u :refer [percent px rem]]]))
 
-(defn viewer [{:keys [templates colors fonts units]}]
+(defn viewer [{:keys [templates colors fonts units breakpoints]}]
   [[v/viewer                 (merge  (:row-component      templates)
                                      {:padding           [[(:full units) 0 (:full units) 0]]
                                       :overflow-y         :auto
                                       :flex               1
                                       :min-height        (:three units)
                                       :width             (:max-content-width   units)})]
+
    [:.viewer--section                {}]
 
    [:.viewer--main           (merge  (:paper              templates)
                                      {:display            :block
                                       :padding         [[(:two units) (:three units)]]
                                       :width             (:max-content-width   units)})]
+
+   (let [{:keys [min-width max-width percent]} (first breakpoints)]
+    (at-media {:min-width min-width :max-width max-width}
+     [[v/viewer               (merge (:column-component    templates)
+                                     {:padding          [[(:full units)]]})]
+      [:.viewer--main                {:width              "100%"}]]))
 
    [:.viewer--loading                {:min-height        (:third units)
                                       :width             (percent 100)

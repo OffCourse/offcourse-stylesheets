@@ -18,7 +18,7 @@
    (let [{:keys [min-width max-width percent]} (first breakpoints)]
      (at-media {:min-width min-width :max-width max-width}
                [v/cards 
-                 [v/container {:width "50%"}]
+                 [v/container {:width "100%"}]
                 v/card {:width "100%"}]))
 
    [v/card (merge (:column-component templates)

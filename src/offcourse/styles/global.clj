@@ -17,6 +17,9 @@
              :flex 1}]
    [:html   {:font-family (:base fonts)
              :overflow     :hidden}]
+   (let [{:keys [min-width max-width percent]} (first breakpoints)]
+    (at-media {:min-width min-width :max-width max-width}
+     [[:html {:overflow :visible}]]))
    [:input  {:border :none} 
     [:&:focus {:outline :none}]]
    [:html    :body :#container (:component templates)]

@@ -2,9 +2,10 @@
   (:refer-clojure :exclude [rem + - * /])
   (:require [garden.units :as u :refer [vh]]
             [garden.arithmetic :refer [*]]
+            [garden.stylesheet :refer [at-media]]
             [offcourse.styles.vocabulary :as v]))
 
-(defn layout [{:keys [templates units colors]}]
+(defn layout [{:keys [templates units colors breakpoints]}]
   [[v/layout        (merge (:column-component templates)
                            (:paper templates)
                            {:flex 1
@@ -23,6 +24,12 @@
                     (:recycled-paper templates)
                     {:flex 2
                      :overflow       :scroll})]]]
+
+   (let [{:keys [min-width max-width percent]} (first breakpoints)]
+    (at-media {:min-width min-width :max-width max-width}
+     [[v/layout                    {:overflow :visible}]
+      [v/main               (merge (:column-component    templates)
+                                   {:overflow :visible})]]))
 
    [v/container (merge (:row-component templates)
                        {:padding [[0 0 (:two-third units) 0]]})]])

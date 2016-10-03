@@ -123,9 +123,7 @@
    :border-highlighted  (fnk [units colors]    {:border-color       [(:primary colors)]})
 
    :component        (fnk [] {:display        :flex
-                              :flex-direction :column
-                              :padding        0
-                              :margin         0})
+                              :flex-direction :column})
    :column-component (fnk [component] component)
    :row-component    (fnk [component] (merge component {:flex-direction :row}))
    :buttonless       (fnk [units] {:outline          :none
