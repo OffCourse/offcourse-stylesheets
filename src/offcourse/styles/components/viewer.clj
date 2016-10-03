@@ -15,25 +15,38 @@
                                       :width             (:max-content-width   units)})]
    [:.viewer--section                {}]
 
-
-
-   [:.viewer--loading                {:min-height       (:third units)
-                                      :width            (percent 100)
-                                      :background       (:primary colors)}]
-   [:.viewer--loading-img            {:min-height       (:third units)
-                                      :width            (percent 100)
-                                      :opacity           0.1
-                                      :background       "url(/images/loader-anim-2.gif)"}]
-   [:.viewer--error                  {:min-height       (:third units)
-                                      :width            (percent 100)
-                                      :background       (:red colors)}]
-   [:.viewer--source-btn             {:padding        [[(:full units) 0]]}]                                  
-
-   [v/viewer--content        (merge  (:paper              templates)
+   [:.viewer--main           (merge  (:paper              templates)
                                      {:display            :block
                                       :padding         [[(:two units) (:three units)]]
-                                      :width             (:max-content-width   units)})
+                                      :width             (:max-content-width   units)})]
 
+   [:.viewer--loading                {:min-height        (:third units)
+                                      :width             (percent 100)
+                                      :background        (:primary colors)}]
+   [:.viewer--loading-img            {:min-height        (:third units)
+                                      :width             (percent 100)
+                                      :opacity            0.1
+                                      :background        "url(/images/loader-anim-2.gif)"}]
+   [:.viewer--error                  {:min-height        (:third units)
+                                      :width             (percent 100)
+                                      :background        (:red colors)}]
+   [:.viewer--source-btn             {:padding         [[(:full units) 0]]}]                                  
+
+   [:.viewer--video-container        {:position           :relative
+                                      :height             0
+                                      :margin             [[(:full units) 0]]
+                                      :max-width         (percent 100)
+                                      :padding-bottom    (percent 56.25)
+                                      :overflow           :hidden}]
+
+   [:.viewer--video                  {:position           :absolute
+                                      :width             (percent 100)
+                                      :height            (percent 100)
+                                      :top                0
+                                      :left               0
+                                      :background        (:night colors)}]
+   
+   [v/viewer--content        
     (for [header v/viewer-headers]   
     [[header                 (merge  (:title              templates)
                                      {:padding         [[(:one-and-half units) 0 (:sixth units) 0]]})
@@ -128,3 +141,4 @@
    [(s/> v/viewer--content :*) 
     [v/last                        {:padding-bottom     0
                                     :margin             0}]]])
+
