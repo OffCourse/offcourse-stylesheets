@@ -149,4 +149,6 @@
    [v/viewer--content
     [:*
      [v/last                        {:padding-bottom     0
-                                     :margin             0}]]]])
+                                     :margin             0}]]
+    [v/viewer-blockquote
+     [v/last                        {:padding-bottom    (:full units)}]]]])

@@ -6,7 +6,7 @@
 (defn button [{:keys [templates colors units fonts]}]
 
   [[v/textbar-button (merge (:textbar            templates)
-                            {:padding         [[(:third units) 0]]
+                            {:padding         [[(:third units) (:two-third units)]]
                              :align-items        :center
                              :font-size         (:subtitle-font units)
                              :cursor             :pointer})
