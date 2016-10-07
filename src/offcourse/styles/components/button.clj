@@ -6,13 +6,14 @@
 (defn button [{:keys [templates colors units fonts]}]
 
   [[v/textbar-button (merge (:textbar            templates)
-                            {:align-items        :center
+                            {:padding         [[(:third units) 0]]
+                             :align-items        :center
                              :font-size         (:subtitle-font units)
                              :cursor             :pointer})
     [v/hovered       (merge (:paper              templates))]
     [v/disabled             {:background-color  (:medium colors)
                              :color             (:day colors)}]]
-   [(s/+ v/textbar-button v/textbar-button) {:margin-left (:sixth units)}] 
+   [(s/+ v/textbar-button v/textbar-button) {:margin-left (:sixth units)}]
 
    [v/icon-button (merge (:buttonless         templates)
                          {:font-size         (:full units)

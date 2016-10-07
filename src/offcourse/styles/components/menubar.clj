@@ -6,20 +6,21 @@
 
 (defn menubar [{:keys [templates colors units]}]
   [[v/menubar           (merge (:row-component        templates)
-                               {:justify-content      :space-between
+                               {:border-bottom      [["1px" :solid (:light colors)]]
+                                :justify-content      :space-between
                                 :flex                 1
                                 :background          (:day colors)
                                 :padding            [[0 (:full units) 0 0]]})]
    [v/menubar--section         {:display              :flex
                                 :align-items          :center}]
-                        
+
    [v/menubar--logo     (merge (:textbar templates)
                                {:justify-content      :center
                                 :height               "100%"
-                                :padding            [[0 (:two-third units)]]
+                                :padding            [[0 (:full units)]]
                                 :cursor               :pointer})
     [v/hovered                 (:paper                templates)]]
-   [:.menubar--link     (merge (:text                 templates) 
+   [:.menubar--link     (merge (:text                 templates)
                                {:margin             [[0 (:one-and-half units) 0 0]]})
     [v/hovered          (merge (:border-thin          templates)
                                (:border-highlighted   templates)

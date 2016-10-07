@@ -39,7 +39,7 @@
     [v/first {:flex [[0 0 (:one-and-half units)]]
               :margin-right (:sixth units)}]
     [v/second {:flex [[0 0 (:padded-column units)]]
-              :margin-right (:full units)}]
+               :margin-right (:full units)}]
     [v/third {:height (:one-and-half units)
               :margin-right (:full units)}]
     [v/last {:margin-right 0
