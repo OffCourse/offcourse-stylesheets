@@ -12,11 +12,10 @@
                                 :background          (:day colors)
                                 :padding            [[0 (:full units) 0 0]]})]
    [v/menubar--section         {:display              :flex
-                                :align-items          :center}]
+                                :align-items          :stretch}]
 
    [v/menubar--logo     (merge (:textbar templates)
                                {:justify-content      :center
-                                :height               "100%"
                                 :padding            [[0 (:full units)]]
                                 :cursor               :pointer})
     [v/hovered                 (:paper                templates)]]
