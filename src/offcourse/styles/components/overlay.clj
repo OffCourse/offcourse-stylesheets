@@ -15,14 +15,17 @@
                                         :align-items        :center
                                         :padding         [[(:full units)]]
                                         :background         "rgba(0,0,0,0.8)"})]
-  [:.edit-modal                 (merge (:sheet              templates)
+  [:.course-form                 (merge (:sheet              templates)
                                        {:width             (:modal-content-width units)})]
-  [:.edit-modal--section        (merge (:column-component   templates)
+  [:.course-form--section        (merge (:column-component   templates)
                                        (:border-thin        templates)
                                        {:padding         [[(:full units)]]})]
-  [:.edit-modal--action-title   (merge (:subtitle           templates)
+  [:.course-form--action-title   (merge (:subtitle           templates)
                                        {:padding          [[0 (:half units) (:half units)]]})]
-  [:.edit-modal--course-title   (merge (:title              templates)
-                                       {:flex               1
-                                        :padding          [[0 (:half units)]]})]
-  [:.edit-modal--actions        (merge (:row-component      templates))]])
+  [:.course-form--course-title   (merge (:title              templates)
+                                       {:background        (:light colors)
+                                        :flex               1
+                                        :padding          [[(:half units)]]})]
+  [:.course-form--cp-actions     (merge (:row-component      templates)
+                                        [:padding         [[(:full units) 0 0]]])]
+  [:.course-form--actions        (merge (:row-component      templates))]])
