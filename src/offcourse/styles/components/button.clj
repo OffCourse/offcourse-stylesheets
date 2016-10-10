@@ -16,7 +16,7 @@
    [(s/+ v/textbar-button v/textbar-button) {:margin-left (:sixth units)}]
 
    [v/icon-button (merge (:buttonless         templates)
-                         {:font-size         (:full units)
+                         {:font-size         (:two units)
                           :font-weight       700
                           :display           :flex
                           :justify-content   :center
