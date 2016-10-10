@@ -21,12 +21,14 @@
                                         (:border-thin        templates)
                                         {:padding         [[(:full units)]]})]
   [:.course-form--action-title   (merge (:subtitle           templates)
-                                        {:padding          [[0 (:half units) (:half units)]]})]
+                                        {:padding          [[0 (:half units) (:third units)]]})]
   [:.course-form--course-title   (merge (:title              templates)
                                         {:background        (:light colors)
                                          :flex               1
-                                         :padding         [[(:half units)]]})
-    [(s/attr :data-error := :true)      {:background        (:red colors)}]]
+                                         :padding         [[(:half units)]]})]
+  [:.course-form--error          (merge (:text               templates)
+                                        {:padding         [[ 0 (:half units) (:third units)]]
+                                         :color             (:red colors)})]
   [:.course-form--cp-actions     (merge (:row-component      templates)
                                         [:padding         [[(:full units) 0 0]]])]
   [:.course-form--actions        (merge (:row-component      templates))]])
