@@ -41,7 +41,7 @@
    :subtitle-font              (fnk [base-font]         (* base-font          1))
    :subtitle-line-height       (fnk [base-line-height]  (* base-line-height   1))
    :base-font                  (fnk [atom]              (* atom 21))
-   :base-line-height           (fnk [atom]              (* atom 30))
+   :base-line-height           (fnk [atom]              (* atom 26))
    :mono-font                  (fnk [atom]              (* atom 22))
    :mono-line-height           (fnk [atom]              (* atom 30))
    :label-font                 (fnk [base-font]         (* base-font          0.8))
