@@ -21,7 +21,7 @@
                     :blue        "#72C7B3"
                     :red         "#E34D2F"})
 
-(def breakpoints [{:min-width 0    :max-width 767  :percent 50  :column-count 2}
+(def breakpoints [{:min-width 0    :max-width 767  :percent 70  :column-count 2}
                   {:min-width 768  :max-width 899  :percent 55  :column-count 3}
                   {:min-width 900  :max-width 1023 :percent 60  :column-count 3}
                   {:min-width 1024 :max-width 1279 :percent 65  :column-count 4}

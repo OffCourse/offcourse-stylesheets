@@ -102,6 +102,7 @@
 
 ;; MODIFIERS
 (s/defpseudoclass hover)
+(s/defpseudoclass active)
 (s/defpseudoclass disabled)
 (s/defpseudoclass first-child)
 (s/defpseudoclass last-child)
@@ -109,6 +110,7 @@
 (def selected (s/& (s/attr :data-selected := :true)))
 (def disabled (s/& disabled))
 (def hovered (s/& hover))
+(def activated (s/& active))
 (def first (s/& first-child))
 (def last (s/& last-child))
 (def second (s/& (s/nth-child "2")))
