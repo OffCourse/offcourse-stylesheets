@@ -10,6 +10,7 @@
              [meta-widget :refer [meta-widget]]
              [menubar :refer [menubar]]
              [viewer :refer [viewer]]
+             [viewer-content :refer [viewer-content]]
              [overlay :refer [overlay]]]))
 
 (defn navigation-panel [{:keys [templates units fonts colors]}]
@@ -18,5 +19,5 @@
 (defn components [config]
   (let [components [list-component meta-widget
                     button dashboard menubar navigation-panel
-                    viewer cards card card-meta card-social overlay]]
+                    viewer viewer-content cards card card-meta card-social overlay]]
     (for [component components] (component config))))
