@@ -144,9 +144,9 @@
                       :blue       (:blue raw-colors)
                       :green      (:green raw-colors)
                       :red        (:red raw-colors)
-                      :facebook   "rgb(191, 196, 193)"
+                      :github     "rgb(191, 196, 193)"
                       :twitter    "rgb(0, 160, 243)"
-                      :github     "rgb(0, 55, 135)"})
+                      :facebook   "rgb(0, 55, 135)"})
    :breakpoints (fnk [raw-breakpoints]
                      (map (fn [{:keys [min-width max-width percent column-count]}]
                             {:min-width    (px min-width)

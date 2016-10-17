@@ -6,7 +6,8 @@
 (defn button [{:keys [templates colors units fonts]}]
   [[v/textbar-button        (merge (:row-component      templates)
                                    (:subtitle           templates)
-                                   {:justify-content    :center
+                                   {:width              "100%"
+                                    :justify-content    :center
                                     :align-items        :center
                                     :padding         [[(:third units) (:two-third units)]]
                                     :background        (:dark colors)
@@ -28,8 +29,10 @@
     {:background (:facebook colors)}
     [v/hovered                     {:background        (:facebook colors)}]]
    [(s/& v/textbar-button (s/attr :data-button-color := :github))
-    {:background (:github colors)}
-    [v/hovered                     {:background        (:github colors)}]]
+    {:color      (:night    colors)
+     :background (:github colors)}
+    [v/hovered                     {:color             (:day    colors)
+                                    :background        (:github colors)}]]
 
    [(s/+ v/textbar-button
          v/textbar-button)

@@ -7,7 +7,7 @@
             :NittiBold        ["NittiBold" "NB"]})
 
 (def colors        {:black       "#000000"
-                    :dark-gray   "#303030"
+                    :dark-gray   "rgb(61,61,61)"
                     :medium-gray "#C0C4C1"
                     :light-gray  "#f4f6f4"
                     :very-light-gray  "#f8f9f8"
