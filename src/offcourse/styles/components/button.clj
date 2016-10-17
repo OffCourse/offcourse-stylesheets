@@ -1,12 +1,13 @@
 (ns offcourse.styles.components.button
   (:require [offcourse.styles.vocabulary :as v]
             [garden
+             [arithmetic :refer [* +]]
              [selectors :as s]]))
 
 (defn button [{:keys [templates colors units fonts]}]
   [[v/textbar-button        (merge (:row-component      templates)
                                    (:subtitle           templates)
-                                   {:width              "100%"
+                                   {:width             (* 10 (:full units))
                                     :justify-content    :center
                                     :align-items        :center
                                     :padding         [[(:third units) (:two-third units)]]
@@ -14,25 +15,19 @@
                                     :color             (:day colors)
                                     :border-bottom   [[(:atom units) :solid (:night colors)]]
                                     :cursor             :pointer})
-    [v/hovered              (merge (:paper              templates))]]
+    [v/hovered              (merge {:color             (:night colors)})]]
 
-   [(s/& v/textbar-button (s/attr :data-button-color := :blue))
-    {:background (:blue colors)}
-    [v/hovered                     {:background        (:day colors)}]]
-   [(s/& v/textbar-button (s/attr :data-button-color := :red))
-    {:background (:red colors)}
-    [v/hovered                     {:background        (:red colors)}]]
-   [(s/& v/textbar-button (s/attr :data-button-color := :twitter))
-    {:background (:twitter colors)}
-    [v/hovered                     {:background        (:twitter colors)}]]
-   [(s/& v/textbar-button (s/attr :data-button-color := :facebook))
-    {:background (:facebook colors)}
-    [v/hovered                     {:background        (:facebook colors)}]]
-   [(s/& v/textbar-button (s/attr :data-button-color := :github))
-    {:color      (:night    colors)
-     :background (:github colors)}
-    [v/hovered                     {:color             (:day    colors)
-                                    :background        (:github colors)}]]
+   [(s/& :.button (s/attr :data-button-color := :blue))
+    {:background (:blue colors)}]
+   [(s/& :.button (s/attr :data-button-color := :red))
+    {:background (:red colors)}]
+   [(s/& :.button (s/attr :data-button-color := :twitter))
+    {:background (:twitter colors)}]
+   [(s/& :.button (s/attr :data-button-color := :linkedin))
+    {:background (:linkedin colors)}]
+   [(s/& :.button (s/attr :data-button-color := :github))
+    {:color      (:dark   colors)
+     :background (:github colors)}]
 
    [(s/+ v/textbar-button
          v/textbar-button)

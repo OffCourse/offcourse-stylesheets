@@ -146,7 +146,7 @@
                       :red        (:red raw-colors)
                       :github     "rgb(191, 196, 193)"
                       :twitter    "rgb(0, 160, 243)"
-                      :facebook   "rgb(0, 55, 135)"})
+                      :linkedin   "rgb(0, 55, 135)"})
    :breakpoints (fnk [raw-breakpoints]
                      (map (fn [{:keys [min-width max-width percent column-count]}]
                             {:min-width    (px min-width)
