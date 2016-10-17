@@ -26,15 +26,19 @@
 
    ; typography
    [:.card--title               (merge  (:title               templates))]
-   [:.card--text                (merge  (:text                templates))]
+   [:.card--text                (merge  (:subtitle            templates))]
    [:.card--link                (merge  (:text                templates)
                                         {:text-decoration     :underline})]
    [:.card--link-em             (merge  (:text                templates)
                                         {:text-decoration     :underline
                                          :color              (:primary colors)})]
+   [:.card--error               (merge  (:text               templates)
+                                        {:padding         [[ 0 (:half units) (:third units)]]
+                                         :color             (:red colors)})]
+
    ; form (could be component)
    [:.card--field               (merge  (:title               templates)
-                                        {:margin-top         (:two-third units)
+                                        {:margin-top         (:third units)
                                          :padding          [[(:third units)(:two-third units)]]
                                          :background         (:light colors)})]
    [:.card--field-small         (merge  (:title               templates)
@@ -45,6 +49,7 @@
                                          :background         (:light colors)})]
    [(s/& :.card--field-small (s/nth-child "2n-1")) {:border-right [[(:sixth units) :solid (:day colors)]]}]
    [(s/& :.card--field-small (s/nth-child "2n")) {:border-left  [[(:sixth units) :solid (:day colors)]]}]
+
    ; Utils
    [:.card--padder              (merge  {:padding-top        (:two-third units)})]
    [:.card--indenter            (merge  {:padding-left       (:two-third units)})]

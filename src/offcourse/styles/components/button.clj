@@ -7,7 +7,7 @@
 (defn button [{:keys [templates colors units fonts]}]
   [[v/textbar-button        (merge (:row-component      templates)
                                    (:subtitle           templates)
-                                   {:width             (* 10 (:full units))
+                                   {:width             (* 8 (:full units))
                                     :justify-content    :center
                                     :align-items        :center
                                     :padding         [[(:third units) (:two-third units)]]
@@ -28,6 +28,19 @@
    [(s/& :.button (s/attr :data-button-color := :github))
     {:color      (:dark   colors)
      :background (:github colors)}]
+
+   [(s/& :.button (s/attr :data-button-width := :full)) {:width "100%"}]
+
+
+   [v/icon-button (merge (:row-component     templates)
+                         (:title             templates)
+                         {:padding-right    (:full units)
+                          :justify-content   :center
+                          :align-items       :center
+                          :background       (:light colors)
+                          :color            (:medium colors)})
+     [v/hovered          {:color            (:primary colors)}]]
+
 
    [(s/+ v/textbar-button
          v/textbar-button)
