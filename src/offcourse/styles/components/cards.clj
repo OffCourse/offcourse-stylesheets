@@ -5,7 +5,7 @@
              [stylesheet :refer [at-media]]]
             [offcourse.styles.vocabulary :as v]))
 
-(defn cards [{:keys [templates breakpoints borders colors units]}]
+(defn cards [{:keys [templates breakpoints colors units]}]
   ; Collection layout
   [[v/cards                     (merge  (:row-component       templates)
                                         (:recycled-paper      templates)
@@ -22,7 +22,7 @@
                                         {:justify-content     :space-between
                                          :width              (:column units)
                                          :flex                1})
-    [v/hovered                          (:highlighted         borders)]]
+    [v/hovered                          (:border-highlighted  templates)]]
 
    [v/card--section             (merge  (:component           templates)
                                         (:border-thin         templates)

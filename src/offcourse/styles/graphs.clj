@@ -10,27 +10,27 @@
 (defn -compose [graph config] ((graph/compile graph) config))
 
 (def units-graph
-  {:column               (fnk [full] (* full 12))
-   :column-gap           (fnk [full] (* 1 full))
-   :padded-column        (fnk [full] (* 12 full))
-   :sidebar              (fnk [column column-gap] (+ column (* 2 column-gap)))
-   :max-content-width    (fnk [full] (* 33 full))
-   :modal-content-width    (fnk [full] (* 30 full))
-   :map                  (fnk [column] (/ column 2))
-   :four                 (fnk [full]  (* full 4))
-   :five                 (fnk [full]  (* full 5))
-   :three                (fnk [full] (* full 3))
-   :two                  (fnk [full] (* full 2))
-   :one-and-half         (fnk [full] (* full 1.5))
-   :one-and-quarter      (fnk [full] (* full 1.25))
-   :two-third            (fnk [third] (* third 2))
-   :full                 (fnk [base-unit] (rem (/ base-unit 16)))
-   :half                 (fnk [full] (/ full 2))
-   :third                (fnk [full] (/ full 3))
-   :sixth                (fnk [full] (/ full 6))
-   :tenth                (fnk [full] (/ full 10))
-   :fifteenth            (fnk [full] (/ full 15))
-   :atom                 (fnk [full] (/ full 30))
+  {:column                     (fnk [full] (* full 12))
+   :column-gap                 (fnk [full] (* 1 full))
+   :padded-column              (fnk [full] (* 12 full))
+   :sidebar                    (fnk [column column-gap] (+ column (* 2 column-gap)))
+   :max-content-width          (fnk [full] (* 33 full))
+   :modal-content-width        (fnk [full] (* 30 full))
+   :map                        (fnk [column] (/ column 2))
+   :four                       (fnk [full]  (* full 4))
+   :five                       (fnk [full]  (* full 5))
+   :three                      (fnk [full] (* full 3))
+   :two                        (fnk [full] (* full 2))
+   :one-and-half               (fnk [full] (* full 1.5))
+   :one-and-quarter            (fnk [full] (* full 1.25))
+   :two-third                  (fnk [third] (* third 2))
+   :full                       (fnk [base-unit] (rem (/ base-unit 16)))
+   :half                       (fnk [full] (/ full 2))
+   :third                      (fnk [full] (/ full 3))
+   :sixth                      (fnk [full] (/ full 6))
+   :tenth                      (fnk [full] (/ full 10))
+   :fifteenth                  (fnk [full] (/ full 15))
+   :atom                       (fnk [full] (/ full 30))
 
    :banner-font                (fnk [base-font]         (* base-font          4))
    :banner-line-height         (fnk [base-line-height]  (* base-line-height   4))
@@ -55,8 +55,6 @@
                                     :color            (:light colors)})
    :paper            (fnk [colors] {:background-color (:day colors)
                                     :color            (:night colors)})
-   :sheet            (fnk [paper borders] (merge paper
-                                                 {:border-bottom (:default borders)}))
    :negative         (fnk [colors] {:background-color (:night colors)
                                     :color            (:day colors)})
    :recycled-paper   (fnk [colors] {:background-color (:light colors)
@@ -114,54 +112,44 @@
                                                 :line-height        (:label-line-height units)
                                                 :font-weight         300})
 
-   ; old font
-   :tiny-font        (fnk [units fonts label] label)
+   :sheet               (fnk [paper border-highlighted] (merge  paper
+                                                               {:border-bottom border-highlighted}))
 
-   :border-default      (fnk [units colors]    {:border-bottom      [[:solid (:sixth units) (:medium colors)]]})
-   :border-thin         (fnk [units colors]    {:border-bottom      [[:solid (:atom units) (:light colors)]]})
-   :border-quotes       (fnk [units colors]    {:border-left        [[:solid (:sixth units) (:medium colors)]]})
-   :border-highlighted  (fnk [units colors]    {:border-color       [(:primary colors)]})
+   :border-default      (fnk [units colors]       {:border-bottom      [[:solid (:sixth units) (:medium colors)]]})
+   :border-thin         (fnk [units colors]       {:border-bottom      [[:solid (:atom units) (:light colors)]]})
+   :border-quotes       (fnk [units colors]       {:border-left        [[:solid (:sixth units) (:medium colors)]]})
+   :border-highlighted  (fnk [units colors]       {:border-color       [(:primary colors)]})
 
-   :component        (fnk [] {:display        :flex
-                              :flex-direction :column})
-   :column-component (fnk [component] component)
-   :row-component    (fnk [component] (merge component {:flex-direction :row}))
-   :buttonless       (fnk [units] {:outline          :none
-                                   :padding          [[0 (:third units)]]
-                                   :border           :none})
+   :component           (fnk []                   {:display        :flex
+                                                   :flex-direction :column})
+   :column-component    (fnk [component]           component)
+   :row-component       (fnk [component] (merge    component
+                                                  {:flex-direction :row}))
 
-   :list-item         (fnk [row-component border-thin title units]
-                           (merge row-component border-thin title
-                                  {:margin-bottom   (:sixth units)
-                                   :align-items     :center
-                                   :font-size       (:subtitle-font units)
-                                   :padding         (:half units)
-                                   :height          (:one-and-half units)}))
-   :textbar          (fnk [units component buttonless logo negative]
+   :textbar             (fnk [units component logo negative]
                           (merge logo
                                  negative
-                                 component
-                                 buttonless))})
+                                 component))})
 
 (def config-graph
   {:colors      (fnk [raw-colors base-color]
-                     {:night   (:black raw-colors)
-                      :dark    (:dark-gray   raw-colors)
-                      :medium  (:medium-gray raw-colors)
-                      :light   (:light-gray  raw-colors)
+                     {:night      (:black raw-colors)
+                      :dark       (:dark-gray   raw-colors)
+                      :medium     (:medium-gray raw-colors)
+                      :light      (:light-gray  raw-colors)
                       :very-light (:very-light-gray raw-colors)
-                      :day     (:white raw-colors)
-                      :primary (base-color raw-colors)
-                      :yellow  (:yellow raw-colors)
-                      :blue    (:blue raw-colors)
-                      :green   (:green raw-colors)
-                      :red     (:red raw-colors)})
+                      :day        (:white raw-colors)
+                      :primary    (base-color raw-colors)
+                      :yellow     (:yellow raw-colors)
+                      :blue       (:blue raw-colors)
+                      :green      (:green raw-colors)
+                      :red        (:red raw-colors)})
    :breakpoints (fnk [raw-breakpoints]
                      (map (fn [{:keys [min-width max-width percent column-count]}]
-                            {:min-width (px min-width)
-                             :max-width (px max-width)
-                             :percent   (u/percent percent)
-                             :column-count column-count})
+                            {:min-width    (px min-width)
+                             :max-width    (px max-width)
+                             :percent      (u/percent percent)
+                             :column-count  column-count})
                           raw-breakpoints))
    :fonts       (fnk [raw-fonts base-font logo-font title-font mono-font]
                      {:base  base-font
@@ -170,15 +158,11 @@
                       :mono  mono-font
                       :raw   (vals raw-fonts)})
 
-   :borders     (fnk [units colors]
-                     {:default [[:solid (* 1 (:atom units)) (:medium colors)]]
-                      :highlighted {:border-color [(:primary colors)]}})
    :units       (fnk [base-unit] (-compose units-graph {:base-unit base-unit}))
-   :templates   (fnk [units fonts colors borders]
-                     (-compose templates-graph {:units  units
-                                                :fonts fonts
-                                                :colors colors
-                                                :borders borders}))})
+   :templates   (fnk [units fonts colors]
+                     (-compose templates-graph {:units    units
+                                                :fonts    fonts
+                                                :colors   colors}))})
 
 
 (def compose (partial -compose config-graph))

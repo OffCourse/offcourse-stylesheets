@@ -2,7 +2,7 @@
   (:refer-clojure :exclude [first last list])
   (:require [offcourse.styles.vocabulary :as v]))
 
-(defn list-component [{:keys [templates borders colors fonts units]}]
+(defn list-component [{:keys [templates colors fonts units]}]
 
   [[v/list        (merge (:column-component templates))]
    [v/list--item  (merge (:row-component templates)

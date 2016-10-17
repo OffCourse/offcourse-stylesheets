@@ -22,4 +22,15 @@
 
    (let [{:keys [min-width max-width percent]} (first breakpoints)]
      (at-media {:min-width min-width :max-width max-width}
-       [[:.meta-widget                   {:padding         [[ (:full units) 0]]}]]))])
+       [[:.meta-widget                   {:padding         [[ (:full units) 0]]}]]))
+
+   [:.auth                        (merge (:column-component   templates)
+                                         (:sheet              templates)
+                                         {:width             (* 20 (:full units))})]
+   [:.auth--section               (merge (:column-component   templates)
+                                         (:border-thin         templates)
+                                         {:padding           (:two-third units)})]
+   [:.auth--button-container      (merge (:row-component      templates))]
+   [:.auth--button                (merge (:button-base        templates))]
+   [:.auth--title                 (merge (:title              templates))]
+   [:.auth--text                  (merge (:text               templates))]])
