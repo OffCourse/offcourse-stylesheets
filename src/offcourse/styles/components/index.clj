@@ -3,10 +3,6 @@
              [cards :refer [cards]]
              [dashboard :refer [dashboard]]
              [button :refer [button]]
-             [strip :refer [strip]]
-             [sheet :refer [sheet]]
-             [label :refer [label-component]]
-             [form :refer [form]]
              [list :refer [list-component]]
              [meta-widget :refer [meta-widget]]
              [menubar :refer [menubar]]
@@ -17,7 +13,7 @@
   [[:.navigation-panel (merge (:component templates) {})]])
 
 (defn components [config]
-  (let [components [list-component sheet form strip
+  (let [components [list-component meta-widget
                     button dashboard menubar navigation-panel
-                    viewer label-component cards overlay]]
+                    viewer cards overlay]]
     (for [component components] (component config))))

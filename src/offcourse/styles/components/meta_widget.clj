@@ -14,8 +14,8 @@
                                         {:justify-content    :flex-start
                                          :padding         [[ 0 (:full units)]]})]
   [:.meta-widget--section        (merge (:column-component   templates))]
-  [:.meta-widget--list           (merge (:column-component   templates
-                                         {}))]
+  [:.meta-widget--list           (merge (:column-component   templates)
+                                        {})]
   [:.meta-widget--list-item      (merge {:padding          [[0 0 (:third units) 0]]})]
   [:.meta-widget--title          (merge (:label              templates))]
   [:.meta-widget--field          (merge (:smalltitle         templates))]
