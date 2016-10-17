@@ -3,18 +3,17 @@
   (:require [offcourse.styles.vocabulary :as v]))
 
 (defn list-component [{:keys [templates colors fonts units]}]
-
-  [[v/list        (merge (:column-component templates))]
-   [v/list--item  (merge (:row-component templates)
-                         (:recycled-paper templates)
-                         (:subtitle templates)
-                         {:margin-bottom   (:fifteenth units)
-                          :align-items     :center
-                          :padding         [[ (:sixth units) (:half units)]]})
-    [v/hovered           (:selected templates)]]
+  [[v/list                  (merge (:column-component templates))]
+   [v/list--item            (merge (:row-component templates)
+                                   (:recycled-paper templates)
+                                   (:subtitle templates)
+                                   {:margin-bottom   (:fifteenth units)
+                                    :align-items     :center
+                                    :padding         [[ (:sixth units) (:half units)]]})
+    [v/hovered                     (:selected templates)]]
 
    [v/edit-list
-     [v/list--item         (merge  (:row-component       templates)
+     [v/list--item          (merge (:row-component       templates)
                                    (:recycled-paper      templates)
                                    {:justify-content     :space-between
                                     :margin-bottom      (:sixth units)
@@ -32,8 +31,8 @@
                                     :background         (:light colors)})]]
 
    [v/todo-list
-    [v/list--item {:justify-content :flex-start}
-     [v/hovered (:selected templates)]
-     [v/selected (:highlighted templates)
+    [v/list--item                  {:justify-content :flex-start}
+     [v/hovered                    (:selected templates)]
+     [v/selected                   (:highlighted templates)
       [v/checkbox-button
-       [v/selected {:background-color (:night colors)}]]]]]])
+       [v/selected                 {:background-color (:night colors)}]]]]]])

@@ -28,22 +28,7 @@
 (s/defclass card--section)
 (s/defclass card--title)
 
-(s/defclass card--edit-field)
-
-(s/defclass card--profile)
-(s/defclass card--profile-section)
-(s/defclass card--profile-image)
-(s/defclass card--profile-label)
-(s/defclass card--profile-username)
-(s/defclass card--profile-stats)
-
 (s/defclass card--actions)
-
-(s/defclass card--social)
-(s/defclass card--social-icons)
-(s/defclass card--social-img)
-(s/defclass card--social-url)
-
 
 (s/defclass viewer)
 (s/defclass viewer--meta)
