@@ -26,8 +26,9 @@
 
    ; typography
    [:.card--title               (merge  (:title               templates))]
-   [:.card--text                (merge  (:subtitle            templates))]
-   [:.card--link                (merge  (:text                templates)
+   [:.card--subtitle            (merge  (:subtitle            templates))]
+   [:.card--text                (merge  (:text                templates))]
+   [:.card--link                (merge  (:subtitle            templates)
                                         {:text-decoration     :underline})]
    [:.card--link-em             (merge  (:text                templates)
                                         {:text-decoration     :underline

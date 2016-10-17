@@ -6,7 +6,7 @@
 
 (defn menubar [{:keys [templates colors units]}]
   [[v/menubar             (merge (:row-component        templates)
-                                 {:border-bottom      [["1px" :solid (:dark colors)]]
+                                 {:border-bottom      [["1px" :solid (:light colors)]]
                                   :justify-content      :space-between
                                   :flex                 1
                                   :background          (:day colors)
