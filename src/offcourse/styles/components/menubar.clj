@@ -14,7 +14,7 @@
    [v/menubar--section           {:display              :flex
                                   :align-items          :stretch}]
 
-   [v/menubar--logo       (merge (:textbar templates)
+   [v/menubar--logo       (merge (:textbar              templates)
                                  {:justify-content      :center
                                   :padding            [[0 (:full units)]]
                                   :cursor               :pointer})
@@ -25,6 +25,7 @@
                                  (:border-highlighted   templates)
                                  {:color               (:primary colors)
                                   :cursor               :pointer})]]
+
    [:.actions-panel              (:row-component        templates)]
    [:.actions-panel--link (merge (:subtitle             templates)
                                  (:row-component        templates)

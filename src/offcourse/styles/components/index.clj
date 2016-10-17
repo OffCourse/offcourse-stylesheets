@@ -8,6 +8,7 @@
              [label :refer [label-component]]
              [form :refer [form]]
              [list :refer [list-component]]
+             [meta-widget :refer [meta-widget]]
              [menubar :refer [menubar]]
              [viewer :refer [viewer]]
              [overlay :refer [overlay]]]))

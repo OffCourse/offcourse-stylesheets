@@ -12,7 +12,10 @@
     [v/hovered              (merge (:paper              templates))]
     [v/disabled                    {:background-color  (:medium colors)
                                     :color             (:day colors)}]]
-   [(s/+ v/textbar-button v/textbar-button) {:margin-left (:sixth units)}]
+
+   [(s/+ v/textbar-button
+         v/textbar-button)
+    {:margin-left     (:sixth units)}]
 
    [v/checkbox-button       (merge (:component        templates)
                                    (:paper            templates)
