@@ -20,10 +20,11 @@
                                         (:border-thin         templates)
                                         {:position            :relative
                                          :padding            (:two-third units)})
-    [v/first                            {:padding-top        (:two-third units)
+     [v/first                           {:padding-top        (:two-third units)
                                          :padding-bottom     (:two-third units)}]]
    [:.card--dropdown            (merge  (:column-component    templates))]
 
+   ; typography
    [:.card--title               (merge  (:title               templates))]
    [:.card--text                (merge  (:text                templates))]
    [:.card--link                (merge  (:text                templates)
@@ -31,16 +32,28 @@
    [:.card--link-em             (merge  (:text                templates)
                                         {:text-decoration     :underline
                                          :color              (:primary colors)})]
-
-   [:.card--padder              (merge  {:padding-top        (:two-third units)})]
-   [:.card--indenter            (merge  {:padding-left       (:two-third units)})]
+   ; form (could be component)
    [:.card--field               (merge  (:title               templates)
                                         {:margin-top         (:two-third units)
                                          :padding          [[(:third units)(:two-third units)]]
                                          :background         (:light colors)})]
+   [:.card--field-small         (merge  (:title               templates)
+                                        {:min-width           "50%"
+                                         :max-width           "50%"
+                                         :margin-top         (:third units)
+                                         :padding          [[(:third units)(:two-third units)]]
+                                         :background         (:light colors)})]
+   [(s/& :.card--field-small (s/nth-child "2n-1")) {:border-right [[(:sixth units) :solid (:day colors)]]}]
+   [(s/& :.card--field-small (s/nth-child "2n")) {:border-left  [[(:sixth units) :solid (:day colors)]]}]
+   ; Utils
+   [:.card--padder              (merge  {:padding-top        (:two-third units)})]
+   [:.card--indenter            (merge  {:padding-left       (:two-third units)})]
    [:.card--row                 (merge  (:row-component       templates))]
    [:.card--row-between         (merge  (:row-component       templates)
                                         {:justify-content     :space-between})]
+   [:.card--row-wrap            (merge  (:row-component       templates)
+                                        {:justify-content     :flex-start
+                                         :flex-wrap           :wrap})]
    [:.card--v-center            (merge  (:row-component       templates)
                                         {:align-items         :center})]
 
