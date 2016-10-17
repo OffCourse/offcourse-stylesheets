@@ -4,14 +4,32 @@
              [selectors :as s]]))
 
 (defn button [{:keys [templates colors units fonts]}]
-  [[v/textbar-button        (merge (:textbar            templates)
-                                   {:padding         [[(:third units) (:two-third units)]]
+  [[v/textbar-button        (merge (:row-component      templates)
+                                   (:subtitle           templates)
+                                   {:justify-content    :center
                                     :align-items        :center
-                                    :font-size         (:subtitle-font units)
+                                    :padding         [[(:third units) (:two-third units)]]
+                                    :background        (:dark colors)
+                                    :color             (:day colors)
+                                    :border-bottom   [[(:atom units) :solid (:night colors)]]
                                     :cursor             :pointer})
-    [v/hovered              (merge (:paper              templates))]
-    [v/disabled                    {:background-color  (:medium colors)
-                                    :color             (:day colors)}]]
+    [v/hovered              (merge (:paper              templates))]]
+
+   [(s/& v/textbar-button (s/attr :data-button-color := :blue))
+    {:background (:blue colors)}
+    [v/hovered                     {:background        (:day colors)}]]
+   [(s/& v/textbar-button (s/attr :data-button-color := :red))
+    {:background (:red colors)}
+    [v/hovered                     {:background        (:red colors)}]]
+   [(s/& v/textbar-button (s/attr :data-button-color := :twitter))
+    {:background (:twitter colors)}
+    [v/hovered                     {:background        (:twitter colors)}]]
+   [(s/& v/textbar-button (s/attr :data-button-color := :facebook))
+    {:background (:facebook colors)}
+    [v/hovered                     {:background        (:facebook colors)}]]
+   [(s/& v/textbar-button (s/attr :data-button-color := :github))
+    {:background (:github colors)}
+    [v/hovered                     {:background        (:github colors)}]]
 
    [(s/+ v/textbar-button
          v/textbar-button)
