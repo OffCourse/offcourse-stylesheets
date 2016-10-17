@@ -28,14 +28,11 @@
    (let [{:keys [min-width max-width percent]} (first breakpoints)]
      (at-media {:min-width min-width :max-width max-width}
                [[v/card                 {:width               "100%"}
-                 [v/hovered
-                  [:.card--dropdown     {:max-height         (* 20 (:full units))
-                                         :transition          "all 0.5s ease 0.5s"}]]
-                 [v/activated
+                 [v/hovered v/activated
                   [:.card--dropdown     {:max-height         (* 20 (:full units))
                                          :transition          "all 0.5s ease 0.5s"}]]]
-                [v/card--title  (merge  {:pointer-events      :none
-                                         :cursor              :default})]
                 [:.card--dropdown       {:max-height          0
                                          :overflow            :hidden
-                                         :transition          "all 0.5s ease"}]]))])
+                                         :transition          "all 0.5s ease"}]
+                [v/card--title  (merge  {:pointer-events      :none
+                                         :cursor              :default})]]))])
