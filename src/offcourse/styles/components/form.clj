@@ -11,10 +11,10 @@
                                        {:margin-top         (:third units)
                                         :padding          [[(:third units)(:two-third units)]]
                                         :background         (:light colors)})
-    [(s/& (s/attr= :data-field-type :half))
+    [(v/attr :data-field-type :half)
      (merge                            {:min-width           "50%"
                                         :max-width           "50%"})
-     [(s/& (s/nth-child "2n-1"))
+     [(v/nth-child "2n-1")
       (merge                           {:border-right [[(:sixth units) :solid (:day colors)]]})]
-     [(s/& (s/nth-child "2n"))
+     [(v/nth-child "2n")
       (merge                           {:border-left  [[(:sixth units) :solid (:day colors)]]})]]]])

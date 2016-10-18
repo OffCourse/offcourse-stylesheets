@@ -81,7 +81,14 @@
 (def disabled (s/& disabled))
 (def hovered (s/& hover))
 (def activated (s/& active))
+
 (def first (s/& first-child))
 (def last (s/& last-child))
 (def second (s/& (s/nth-child "2")))
 (def third (s/& (s/nth-child "3")))
+(defn nth-child [expression] (s/& (s/nth-child expression)))
+
+(defn attr
+  ([attribute-name op attribute-value] (s/& (s/attr attribute-name op attribute-value)))
+  ([attribute-name attribute-value] (s/& (s/attr= attribute-name attribute-value)))
+  ([attribute-name] (s/& (s/attr attribute-name))))
