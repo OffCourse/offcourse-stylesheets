@@ -1,4 +1,5 @@
 (ns offcourse.styles.components.button
+  (:refer-clojure :exclude [+ - * /])
   (:require [offcourse.styles.vocabulary :as v]
             [garden
              [arithmetic :refer [* +]]

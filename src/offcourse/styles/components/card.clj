@@ -13,6 +13,8 @@
                                          :width              (:column units)})
     [v/hovered                          (:border-highlighted  templates)]]
 
+   [(s/& :.card (s/attr :data-card-type := :medium))
+    {:width (* 20 (:full units))}]
    [(s/& :.card (s/attr :data-card-type := :wide))
     {:width (:max-content-width units)}]
 
@@ -50,8 +52,9 @@
                                          :background         (:light colors)})]
    [(s/& :.card--field-small (s/nth-child "2n-1")) {:border-right [[(:sixth units) :solid (:day colors)]]}]
    [(s/& :.card--field-small (s/nth-child "2n")) {:border-left  [[(:sixth units) :solid (:day colors)]]}]
+   ; /form
 
-   ; Utils
+   ; Utils (questionable)
    [:.card--padder              (merge  {:padding-top        (:two-third units)})]
    [:.card--indenter            (merge  {:padding-left       (:two-third units)})]
    [:.card--row                 (merge  (:row-component       templates))]

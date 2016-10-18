@@ -9,6 +9,7 @@
              [list :refer [list-component]]
              [meta-widget :refer [meta-widget]]
              [menubar :refer [menubar]]
+             [notifybar :refer [notifybar]]
              [viewer :refer [viewer]]
              [viewer-content :refer [viewer-content]]
              [overlay :refer [overlay]]]))
@@ -18,6 +19,6 @@
 
 (defn components [config]
   (let [components [list-component meta-widget
-                    button dashboard menubar navigation-panel
+                    button dashboard menubar notifybar navigation-panel
                     viewer viewer-content cards card card-meta card-social overlay]]
     (for [component components] (component config))))

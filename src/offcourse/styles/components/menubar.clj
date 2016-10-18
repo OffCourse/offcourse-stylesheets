@@ -6,11 +6,10 @@
 
 (defn menubar [{:keys [templates colors units]}]
   [[v/menubar             (merge (:row-component        templates)
-                                 {:border-bottom      [["1px" :solid (:light colors)]]
+                                 {:flex                 1
                                   :justify-content      :space-between
-                                  :flex                 1
-                                  :background          (:day colors)
-                                  :padding            [[0 (:full units) 0 0]]})]
+                                  :padding            [[0 (:full units) 0 0]]
+                                  :background          (:day colors)})]
    [v/menubar--section           {:display              :flex
                                   :align-items          :stretch}]
 

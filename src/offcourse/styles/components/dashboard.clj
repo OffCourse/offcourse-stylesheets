@@ -1,4 +1,5 @@
 (ns offcourse.styles.components.dashboard
+  (:refer-clojure :exclude [+ - * /])
   (:require [offcourse.styles.vocabulary :as v]
             [garden
               [stylesheet :refer [at-media]]
