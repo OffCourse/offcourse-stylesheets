@@ -58,9 +58,6 @@
 (s/defclass menubar--section)
 (s/defclass menubar--logo)
 
-(s/defclass form)
-(s/defclass form--input)
-
 (s/defclass button)
 (def textbar-button (button (s/attr :data-button-type := :textbar)))
 (def icon-button (button (s/attr :data-button-type := :icon)))

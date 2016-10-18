@@ -13,12 +13,12 @@
                                      :justify-content      :space-between
                                      :background          (:dark colors)
                                      :color               (:day colors)})
-     [(v/attr :data-notify-color := :yellow)
+     [(v/attr :data-notify-color :yellow)
       {:background (:yellow colors)
        :color      (:night colors)}]
-     [(v/attr :data-notify-color := :blue)
+     [(v/attr :data-notify-color :blue)
       {:background (:blue colors)}]
-     [(v/attr :data-notify-color := :red)
+     [(v/attr :data-notify-color :red)
       {:background (:red colors)}]]
    [:.notifybar--section     (merge (:row-component       templates)
                                     {:padding            [[0 (:full units)]]})]

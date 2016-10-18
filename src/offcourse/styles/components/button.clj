@@ -6,52 +6,47 @@
              [selectors :as s]]))
 
 (defn button [{:keys [templates colors units fonts]}]
-  [[v/textbar-button        (merge (:row-component      templates)
-                                   (:subtitle           templates)
-                                   {:width             (* 8 (:full units))
-                                    :justify-content    :center
-                                    :align-items        :center
-                                    :padding         [[(:third units) (:two-third units)]]
-                                    :background        (:dark colors)
-                                    :color             (:day colors)
-                                    :border-bottom   [[(:atom units) :solid (:night colors)]]
-                                    :cursor             :pointer})
-    [v/hovered              (merge {:color             (:night colors)})]]
+  [[v/textbar-button         (merge (:row-component      templates)
+                                    (:subtitle           templates)
+                                    {:width             (* 8 (:full units))
+                                     :justify-content    :center
+                                     :align-items        :center
+                                     :padding         [[(:third units) (:two-third units)]]
+                                     :background        (:dark colors)
+                                     :color             (:day colors)
+                                     :border-bottom   [[(:atom units) :solid (:night colors)]]
+                                     :cursor             :pointer})
+     [v/hovered              (merge {:color             (:night colors)})]
+     [(v/attr :data-button-color :blue)
+      (merge                        {:background (:blue colors)})]
+     [(v/attr :data-button-color :red)
+      (merge                        {:background (:red colors)})]
+     [(v/attr :data-button-color :twitter)
+      (merge                        {:background (:twitter colors)})]
+     [(v/attr :data-button-color :linkedin)
+      (merge                        {:background (:linkedin colors)})]
+     [(v/attr :data-button-color :github)
+      (merge                        {:color      (:dark   colors)
+                                     :background (:github colors)})]
+     [(v/attr :data-button-width := :full)
+      (merge                        {:width "100%"})]]
+   [(s/+ v/textbar-button v/textbar-button)
+    (merge                          {:margin-left     (:sixth units)})]
 
-   [(s/& :.button (s/attr :data-button-color := :blue))
-    {:background (:blue colors)}]
-   [(s/& :.button (s/attr :data-button-color := :red))
-    {:background (:red colors)}]
-   [(s/& :.button (s/attr :data-button-color := :twitter))
-    {:background (:twitter colors)}]
-   [(s/& :.button (s/attr :data-button-color := :linkedin))
-    {:background (:linkedin colors)}]
-   [(s/& :.button (s/attr :data-button-color := :github))
-    {:color      (:dark   colors)
-     :background (:github colors)}]
+   [v/icon-button            (merge (:row-component     templates)
+                                    (:title             templates)
+                                    {:padding-right    (:full units)
+                                     :justify-content   :center
+                                     :align-items       :center
+                                     :background       (:light colors)
+                                     :color            (:medium colors)})
+     [v/hovered                     {:color            (:primary colors)}]]
 
-   [(s/& :.button (s/attr :data-button-width := :full)) {:width "100%"}]
-
-
-   [v/icon-button (merge (:row-component     templates)
-                         (:title             templates)
-                         {:padding-right    (:full units)
-                          :justify-content   :center
-                          :align-items       :center
-                          :background       (:light colors)
-                          :color            (:medium colors)})
-     [v/hovered          {:color            (:primary colors)}]]
-
-
-   [(s/+ v/textbar-button
-         v/textbar-button)
-    {:margin-left     (:sixth units)}]
-
-   [v/checkbox-button       (merge (:component        templates)
-                                   (:paper            templates)
-                                   {:display          :flex
-                                    :margin-right     (:two-third units)
-                                    :width            (:two-third units)
-                                    :height           (:two-third units)})
-    [v/selected                    {:background-color (:primary colors)}]
-    [v/disabled                    {:background-color (:medium colors)}]]])
+   [v/checkbox-button        (merge (:component        templates)
+                                    (:paper            templates)
+                                    {:display          :flex
+                                     :margin-right     (:two-third units)
+                                     :width            (:two-third units)
+                                     :height           (:two-third units)})
+    [v/selected                     {:background-color (:primary colors)}]
+    [v/disabled                     {:background-color (:medium colors)}]]])
