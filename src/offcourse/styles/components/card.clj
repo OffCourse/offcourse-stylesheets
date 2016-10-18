@@ -11,25 +11,30 @@
                                         (:sheet               templates)
                                         {:justify-content     :space-between
                                          :width              (:column units)})
-    [v/hovered                          (:border-highlighted  templates)]]
-
-   [(s/& :.card (s/attr :data-card-type := :medium))
-    {:width (* 20 (:full units))}]
-   [(s/& :.card (s/attr :data-card-type := :wide))
-    {:width (:max-content-width units)}]
+    [v/hovered                          (:border-highlighted  templates)]
+    [(s/& (s/attr= :data-card-type :medium))
+     {:width (* 20 (:full units))}]
+    [(s/& (s/attr= :data-card-type :wide))
+     {:width (:max-content-width units)}]]
 
    [:.card--section             (merge  (:component           templates)
                                         (:border-thin         templates)
                                         {:position            :relative
-                                         :padding            (:two-third units)})
-     [v/first                           {:padding-top        (:two-third units)
-                                         :padding-bottom     (:two-third units)}]]
+                                         :padding            (:two-third units)})]
    [:.card--dropdown            (merge  (:column-component    templates))]
 
    ; typography
-   [:.card--title               (merge  (:title               templates))]
+   [:.card--title               (merge  (:title               templates))
+    [(s/& (s/attr= :data-title-type :disabled))
+     {:color              (:medium colors)}]
+    [(s/& (s/attr :data-title-indent))
+     {:padding-left       (:two-third units)}]]
+
    [:.card--subtitle            (merge  (:subtitle            templates))]
-   [:.card--text                (merge  (:text                templates))]
+   [:.card--text                (merge  (:text                templates))
+    [(s/& (s/attr :data-text-indent))
+     {:padding-left       (:two-third units)}]]
+
    [:.card--link                (merge  (:subtitle            templates)
                                         {:text-decoration     :underline})]
    [:.card--link-em             (merge  (:text                templates)
@@ -49,22 +54,24 @@
                                          :max-width           "50%"
                                          :margin-top         (:third units)
                                          :padding          [[(:third units)(:two-third units)]]
-                                         :background         (:light colors)})]
-   [(s/& :.card--field-small (s/nth-child "2n-1")) {:border-right [[(:sixth units) :solid (:day colors)]]}]
-   [(s/& :.card--field-small (s/nth-child "2n")) {:border-left  [[(:sixth units) :solid (:day colors)]]}]
-   ; /form
+                                         :background         (:light colors)})
+    [(s/& (s/nth-child "2n-1"))
+     {:border-right [[(:sixth units) :solid (:day colors)]]}]
+    [(s/& (s/nth-child "2n"))
+     {:border-left  [[(:sixth units) :solid (:day colors)]]}]]
 
-   ; Utils (questionable)
+   ; Utils
    [:.card--padder              (merge  {:padding-top        (:two-third units)})]
-   [:.card--indenter            (merge  {:padding-left       (:two-third units)})]
-   [:.card--row                 (merge  (:row-component       templates))]
-   [:.card--row-between         (merge  (:row-component       templates)
-                                        {:justify-content     :space-between})]
-   [:.card--row-wrap            (merge  (:row-component       templates)
-                                        {:justify-content     :flex-start
-                                         :flex-wrap           :wrap})]
-   [:.card--v-center            (merge  (:row-component       templates)
+
+   [:.card--row                 (merge  (:row-component       templates)
                                         {:align-items         :center})]
+   [(s/& :.card--row (s/attr :data-top-padded := :true))
+    {:padding-top       (:two-third units)}]
+   [(s/& :.card--row (s/attr :data-space-between := :true))
+    {:justify-content     :space-between}]
+   [(s/& :.card--row (s/attr :data-wrap := :true))
+    {:justify-content     :flex-start
+     :flex-wrap           :wrap}]
 
    (let [{:keys [min-width max-width percent]} (first breakpoints)]
      (at-media {:min-width min-width :max-width max-width}
