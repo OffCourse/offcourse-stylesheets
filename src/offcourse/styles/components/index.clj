@@ -2,6 +2,7 @@
   (:require [offcourse.styles.components
              [cards :refer [cards]]
              [card :refer [card]]
+             [form :refer [form]]
              [card-meta :refer [card-meta]]
              [card-social :refer [card-social]]
              [dashboard :refer [dashboard]]
@@ -18,7 +19,7 @@
   [[:.navigation-panel (merge (:component templates) {})]])
 
 (defn components [config]
-  (let [components [list-component meta-widget
+  (let [components [list-component meta-widget form
                     button dashboard menubar notifybar navigation-panel
                     viewer viewer-content cards card card-meta card-social overlay]]
     (for [component components] (component config))))
