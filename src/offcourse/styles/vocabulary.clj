@@ -15,21 +15,6 @@
 (def edit-list (list (s/attr :data-list-type := :edit)))
 (s/defclass list--item)
 
-(s/defclass sheets)
-(s/defclass sheet)
-(s/defclass sheet--section)
-
-(s/defclass strips)
-(s/defclass strip)
-(s/defclass strip--section)
-
-(s/defclass cards)
-(s/defclass card)
-(s/defclass card--section)
-(s/defclass card--title)
-
-(s/defclass card--actions)
-
 (s/defclass viewer)
 (s/defclass viewer--meta)
 (s/defclass viewer--content)

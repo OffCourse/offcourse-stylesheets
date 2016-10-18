@@ -6,7 +6,7 @@
             [offcourse.styles.vocabulary :as v]))
 
 (defn cards [{:keys [templates breakpoints colors units]}]
-  [[v/cards                     (merge  (:row-component       templates)
+  [[:.cards                     (merge  (:row-component       templates)
                                         (:recycled-paper      templates)
                                         {:padding          [[(:full units) 0 (:full units) (:full units)]]
                                          :column-gap         (:column-gap units)
@@ -17,5 +17,5 @@
 
    (let [{:keys [min-width max-width percent]} (first breakpoints)]
      (at-media {:min-width min-width :max-width max-width}
-               [[v/cards
+               [[:.cards
                  [v/container           {:width               "100%"}]]]))])
