@@ -13,9 +13,9 @@
                                          :width              (:column units)})
     [v/hovered                          (:border-highlighted  templates)]
     [(v/attr :data-card-type :medium)
-     (merge                             {:width (* 20 (:full units))})]
+     (merge                             {:width              (* 20 (:full units))})]
     [(v/attr :data-card-type :wide)
-     (merge                             {:width (:max-content-width units)})]]
+     (merge                             {:width              (:max-content-width units)})]]
    [:.card--section             (merge  (:component           templates)
                                         (:border-thin         templates)
                                         {:position            :relative
