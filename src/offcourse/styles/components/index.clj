@@ -11,6 +11,7 @@
              [meta-widget :refer [meta-widget]]
              [menubar :refer [menubar]]
              [notifybar :refer [notifybar]]
+             [dropdown :refer [dropdown]]
              [viewer :refer [viewer]]
              [viewer-content :refer [viewer-content]]
              [overlay :refer [overlay]]]))
@@ -19,7 +20,7 @@
   [[:.navigation-panel (merge (:component templates) {})]])
 
 (defn components [config]
-  (let [components [list-component meta-widget form
+  (let [components [list-component meta-widget form dropdown
                     button dashboard menubar notifybar navigation-panel
                     viewer viewer-content cards card card-meta card-social overlay]]
     (for [component components] (component config))))

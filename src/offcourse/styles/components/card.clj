@@ -46,7 +46,8 @@
 
    ; Utils
    [:.card--row                 (merge  (:row-component       templates)
-                                        {:align-items         :center})
+                                        {:position            :relative
+                                         :align-items         :center})
     [(v/attr :data-row-padded)
      (merge                             {:padding-top        (:two-third units)})]
     [(v/attr :data-row-spaced)
