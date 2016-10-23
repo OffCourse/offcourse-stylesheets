@@ -14,12 +14,12 @@
                                      :background          (:dark colors)
                                      :color               (:day colors)})
      [(v/attr :data-notify-color :yellow)
-      {:background (:yellow colors)
-       :color      (:night colors)}]
+      (merge                        {:background (:yellow colors)
+                                     :color      (:night colors)})]
      [(v/attr :data-notify-color :blue)
-      {:background (:blue colors)}]
+      (merge                        {:background (:blue colors)})]
      [(v/attr :data-notify-color :red)
-      {:background (:red colors)}]]
+      (merge                        {:background (:red colors)})]]
    [:.notifybar--section     (merge (:row-component       templates)
                                     {:padding            [[0 (:full units)]]})]
 

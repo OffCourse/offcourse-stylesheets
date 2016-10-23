@@ -12,7 +12,7 @@
                                     :padding         [[ (:sixth units) (:half units)]]})
     [v/hovered                     (:selected templates)]]
 
-   [v/edit-list
+   [v/edit-list                    {:padding           [[(:third units) 0]]}
      [v/list--item          (merge (:row-component       templates)
                                    (:recycled-paper      templates)
                                    {:justify-content     :space-between

@@ -15,7 +15,8 @@
     [(v/attr :data-card-type :medium)
      (merge                             {:width              (* 20 (:full units))})]
     [(v/attr :data-card-type :wide)
-     (merge                             {:width              (:max-content-width units)})]]
+     (merge                             {:width              (:max-content-width units)})
+     [:.card--section                   {:padding             (:full units)}]]]
    [:.card--section             (merge  (:component           templates)
                                         (:border-thin         templates)
                                         {:position            :relative
@@ -28,11 +29,15 @@
      (merge                             {:color              (:medium colors)})]
     [(v/attr :data-title-indent)
      (merge                             {:padding-left       (:two-third units)})]]
-   [:.card--subtitle            (merge  (:subtitle            templates))]
+   [:.card--subtitle            (merge  (:subtitle            templates))
+    [(v/attr :data-subtitle-indent)
+     (merge                             {:padding-left       (:two-third units)})]]
    [:.card--text                (merge  (:text                templates))
     [(v/attr :data-text-indent)
      (merge                             {:padding-left       (:two-third units)})]
-    [(v/attr :data-text-padded)
+    [(v/attr :data-text-padded :small)
+     (merge                             {:padding-bottom     (:third units)})]
+    [(v/attr :data-text-padded :large)
      (merge                             {:padding-bottom     (:two-third units)})]]
    [:.card--link                (merge  (:text                templates)
                                         {:text-decoration     :underline})
@@ -48,8 +53,10 @@
    [:.card--row                 (merge  (:row-component       templates)
                                         {:position            :relative
                                          :align-items         :center})
-    [(v/attr :data-row-padded)
-     (merge                             {:padding-top        (:two-third units)})]
+    [(v/attr :data-row-padded :small)
+     (merge                             {:padding-bottom     (:third units)})]
+    [(v/attr :data-row-padded :large)
+     (merge                             {:padding-bottom     (:two-third units)})]
     [(v/attr :data-row-spaced)
      (merge                             {:justify-content     :space-between})]
     [(v/attr :data-row-wrap)
