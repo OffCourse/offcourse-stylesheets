@@ -28,6 +28,7 @@
    [:.actions-panel              (:row-component        templates)]
    [:.actions-panel--link (merge (:subtitle             templates)
                                  (:row-component        templates)
-                                 {:align-items          :center
+                                 {:padding-left        (:full units)
+                                  :align-items          :center
                                   :cursor               :pointer})
     [v/hovered                   {:text-decoration      :underline}]]])
