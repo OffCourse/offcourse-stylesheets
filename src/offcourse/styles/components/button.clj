@@ -17,17 +17,21 @@
                                      :border-bottom   [[(:atom units) :solid (:night colors)]]
                                      :cursor             :pointer})
      [v/hovered              (merge {:color             (:night colors)})]
+     [(v/attr :data-button-color :light)
+      (merge                        {:background        (:light colors)
+                                     :color             (:dark colors)
+                                     :border             :none})]
      [(v/attr :data-button-color :blue)
-      (merge                        {:background (:blue colors)})]
+      (merge                        {:background        (:blue colors)})]
      [(v/attr :data-button-color :red)
-      (merge                        {:background (:red colors)})]
+      (merge                        {:background        (:red colors)})]
      [(v/attr :data-button-color :twitter)
-      (merge                        {:background (:twitter colors)})]
+      (merge                        {:background        (:twitter colors)})]
      [(v/attr :data-button-color :linkedin)
-      (merge                        {:background (:linkedin colors)})]
+      (merge                        {:background        (:linkedin colors)})]
      [(v/attr :data-button-color :github)
-      (merge                        {:color      (:dark   colors)
-                                     :background (:github colors)})]
+      (merge                        {:color             (:dark   colors)
+                                     :background        (:github colors)})]
      [(v/attr :data-button-width := :full)
       (merge                        {:width "100%"})]]
    [(s/+ v/textbar-button v/textbar-button)
