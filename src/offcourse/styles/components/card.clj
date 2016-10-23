@@ -25,7 +25,7 @@
 
    ; typography
    [:.card--title               (merge  (:title               templates))
-    [(v/attr :data-title-type :disabled)
+    [(v/attr :data-title-disabled :true)
      (merge                             {:color              (:medium colors)})]
     [(v/attr :data-title-indent)
      (merge                             {:padding-left       (:two-third units)})]]

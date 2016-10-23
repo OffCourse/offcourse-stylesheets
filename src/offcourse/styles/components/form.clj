@@ -15,6 +15,8 @@
      (merge                             {:min-width           "50%"
                                          :max-width           "50%"})
      [(v/nth-child "2n-1")
-      (merge                            {:border-right [[(:sixth units) :solid (:day colors)]]})]
+      (merge                            {:border-right     [[(:sixth units) :solid (:day colors)]]})]
      [(v/nth-child "2n")
-      (merge                            {:border-left  [[(:sixth units) :solid (:day colors)]]})]]]])
+      (merge                            {:border-left      [[(:sixth units) :solid (:day colors)]]})]]
+    [(v/attr :data-field-margin)
+     (merge                             {:margin-bottom   [[(:two-third units)]]})]]])
