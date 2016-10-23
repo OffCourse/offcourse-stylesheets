@@ -6,12 +6,12 @@
               [arithmetic :refer [* +]]]))
 
 (defn dashboard [{:keys [templates colors units breakpoints]}]
-  [[v/dashboard        (merge     (:column-component   templates)
+  [[:.dashboard            (merge (:column-component   templates)
                                   {:width             (:sidebar units)})]
 
    (let [{:keys [min-width max-width percent]} (first breakpoints)]
     (at-media {:min-width min-width :max-width max-width}
-     [v/dashboard      (merge     {:width      "100%"})]))
+     [:.dashboard          (merge {:width      "100%"})]))
 
-   [v/dashboard--main             {:padding    [[(:full units) (:full units) 0]]}]
-   [v/dashboard--edit  (merge     {:padding    [[0 (+ (:full units) (:two-third units)) (:full units)]]})]])
+   [:.dashboard--main             {:padding    [[(:full units) (:full units) 0]]}]
+   [:.dashboard--controls  (merge {:padding    [[0 (+ (:full units) (:two-third units)) (:full units)]]})]])
