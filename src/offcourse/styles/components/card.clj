@@ -24,9 +24,11 @@
    [:.card--wrapper             (merge  (:column-component    templates))]
 
    ; typography
-   [:.card--title               (merge  (:title               templates))
+   [:.card--title               (merge  (:title               templates)
+                                        {:word-wrap           :break-word})
     [(v/attr :data-title-disabled :true)
      (merge                             {:color              (:medium colors)})]
+
     [(v/attr :data-title-indent)
      (merge                             {:padding-left       (:two-third units)})]]
    [:.card--subtitle            (merge  (:subtitle            templates))

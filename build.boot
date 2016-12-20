@@ -1,5 +1,5 @@
 (def project 'offcourse/styles)
-(def version "0.4.0")
+(def version "0.5.0-SNAPSHOT")
 
 (set-env!
  :resource-paths #{"src"}
