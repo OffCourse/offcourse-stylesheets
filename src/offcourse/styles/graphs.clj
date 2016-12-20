@@ -32,18 +32,19 @@
    :fifteenth                  (fnk [full] (/ full 15))
    :atom                       (fnk [full] (/ full 30))
 
+   :base-font                  (fnk [atom]              (* atom               21))
+   :base-line-height           (fnk [atom]              (* atom               26))
+   :mono-font                  (fnk [atom]              (* atom               22))
+   :mono-line-height           (fnk [atom]              (* atom               30))
+
    :banner-font                (fnk [base-font]         (* base-font          4))
    :banner-line-height         (fnk [base-line-height]  (* base-line-height   4))
    :large-font                 (fnk [base-font]         (* base-font          2.2))
    :large-line-height          (fnk [base-line-height]  (* base-line-height   1.8))
    :title-font                 (fnk [base-font]         (* base-font          1.5))
-   :title-line-height          (fnk [base-line-height]  (* base-line-height   1))
+   :title-line-height          (fnk [base-line-height]  (* base-line-height   1.2))
    :subtitle-font              (fnk [base-font]         (* base-font          1))
    :subtitle-line-height       (fnk [base-line-height]  (* base-line-height   1))
-   :base-font                  (fnk [atom]              (* atom 21))
-   :base-line-height           (fnk [atom]              (* atom 26))
-   :mono-font                  (fnk [atom]              (* atom 22))
-   :mono-line-height           (fnk [atom]              (* atom 30))
    :label-font                 (fnk [base-font]         (* base-font          0.8))
    :label-line-height          (fnk [base-line-height]  (* base-line-height   0.8))})
 
@@ -66,59 +67,47 @@
                                                 :font-size          (:banner-font units)
                                                 :line-height        (:banner-line-height units)
                                                 :font-weight         500})
-
    :logo                (fnk [fonts units]     {:font-family        (:logo fonts)
                                                 :font-size          (:title-font units)
                                                 :line-height        (:title-line-height units)
                                                 :font-weight         500})
-
    :title               (fnk [units fonts]     {:font-family        (:title fonts)
                                                 :font-size          (:title-font units)
                                                 :line-height        (:title-line-height units)
                                                 :font-weight         500})
-
    :form                (fnk [units fonts]     {:font-family        (:base fonts)
                                                 :font-size          (:title-font units)
                                                 :line-height        (:title-line-height units)
                                                 :font-weight         300})
-
    :list                (fnk [units fonts]     {:font-family        (:title fonts)
                                                 :font-size          (:subtitle-font units)
                                                 :line-height        (:title-line-height units)
                                                 :font-weight         300})
-
    :mono                (fnk [units fonts]     {:font-family        (:mono fonts)
                                                 :font-size          (:mono-font units)
                                                 :line-height        (:mono-line-height units)
                                                 :font-weight         300})
-
    :subtitle            (fnk [units fonts]     {:font-family        (:title fonts)
                                                 :font-size          (:subtitle-font units)
                                                 :line-height        (:subtitle-line-height units)
                                                 :font-weight         300})
-
    :text                (fnk [units fonts]     {:font-family        (:base fonts)
                                                 :font-size          (:base-font units)
                                                 :line-height        (:base-line-height units)
                                                 :font-weight         300})
-
    :smalltitle          (fnk [units fonts]     {:font-family        (:title fonts)
                                                 :font-size          (:label-font units)
                                                 :line-height        (:label-line-height units)
                                                 :font-weight         300})
-
    :label               (fnk [units fonts]     {:font-family        (:base fonts)
                                                 :font-size          (:label-font units)
                                                 :line-height        (:label-line-height units)
                                                 :font-weight         300})
 
-   :sheet               (fnk [paper border-highlighted] (merge  paper
-                                                               {:border-bottom border-highlighted}))
-
-   :border-default      (fnk [units colors]       {:border-bottom      [[:solid (:sixth units) (:medium colors)]]})
-   :border-thin         (fnk [units colors]       {:border-bottom      [[:solid (:atom units) (:light colors)]]})
-   :border-quotes       (fnk [units colors]       {:border-left        [[:solid (:sixth units) (:medium colors)]]})
-   :border-highlighted  (fnk [units colors]       {:border-color       [(:primary colors)]})
+   :border-default      (fnk [units colors] {:border-bottom [[:solid (:sixth units) (:medium colors)]]})
+   :border-thin         (fnk [units colors] {:border-bottom [[:solid (:atom units) (:light colors)]]})
+   :border-quotes       (fnk [units colors] {:border-left   [[:solid (:sixth units) (:medium colors)]]})
+   :border-highlighted  (fnk [units colors] {:border-color  [(:primary colors)]})
 
    :component           (fnk []                   {:display        :flex
                                                    :flex-direction :column})
@@ -126,6 +115,9 @@
    :row-component       (fnk [component] (merge    component
                                                   {:flex-direction :row}))
 
+   :sheet               (fnk [paper border-highlighted]
+                             (merge paper
+                                    {:border-bottom border-highlighted}))
    :textbar             (fnk [units component logo negative]
                           (merge logo
                                  negative
