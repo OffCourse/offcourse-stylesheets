@@ -24,14 +24,15 @@
                                  {:padding-left        (:full units)
                                   :align-items          :center})]
 
-   [:.actions-panel--link            (merge (:subtitle             templates)
-                                            {:cursor               :pointer})
-    [v/hovered                       (merge {:border-bottom     [["1px" "solid" (:night colors)]]
-                                             :margin-bottom       "-1px"})]]
+   [:.actions-panel--link            (merge (:subtitle         templates)
+                                            {:cursor           :pointer})
+    [v/hovered                       (merge {:border-bottom  [["1px" "solid" (:night colors)]]
+                                             :margin-bottom    "-1px"})]]
 
    [:.action-panel--search-container (merge (:row-component    templates)
                                             {:cursor           :pointer})
-    [v/hovered v/activated           (merge {:border-bottom  [["1px" "solid" (:night colors)]]})]]
-   [:.actions-panel--search          (merge (:subtitle             templates)
-                                            {:margin-right        (:full units)})]
-   [:.actions-panel--search-btn      (merge (:subtitle             templates))]])
+    [v/hovered v/activated           (merge {:border-bottom  [["1px" "solid" (:night colors)]]
+                                             :margin-bottom    "-1px"})]]
+   [:.actions-panel--search          (merge (:subtitle         templates)
+                                            {:margin-right    (:full units)})]
+   [:.actions-panel--search-btn      (merge (:subtitle         templates))]])
