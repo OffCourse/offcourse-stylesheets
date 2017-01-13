@@ -39,11 +39,11 @@
 
    [v/icon-button            (merge (:row-component     templates)
                                     (:title             templates)
-                                    {:padding-right    (:full units)
+                                    {:padding          (:third units)
                                      :justify-content   :center
                                      :align-items       :center
-                                     :background       (:light colors)
-                                     :color            (:medium colors)})
+                                     :background       (:medium colors)
+                                     :color            (:light colors)})
      [v/hovered                     {:color            (:primary colors)}]]
 
    [v/checkbox-button        (merge (:component        templates)

@@ -9,7 +9,7 @@
 
 (defn viewer [{:keys [templates colors fonts units breakpoints]}]
   [[v/viewer                 (merge  (:row-component      templates)
-                                     {:padding           [[(:full units) 0 (:full units) 0]]
+                                     {:padding           [[0 0 (:full units) 0]]
                                       :flex               1
                                       :min-height        (:three units)
                                       :max-width         "100vw"})]
