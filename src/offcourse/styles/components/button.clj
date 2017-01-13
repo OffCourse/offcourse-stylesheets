@@ -44,7 +44,8 @@
                                      :align-items       :center
                                      :background       (:medium colors)
                                      :color            (:light colors)})
-     [v/hovered                     {:color            (:primary colors)}]]
+     [v/hovered                     {:color            (:primary colors)}]
+     [:.button--icon                {:width            (:half units)}]]
 
    [v/checkbox-button        (merge (:component        templates)
                                     (:paper            templates)
