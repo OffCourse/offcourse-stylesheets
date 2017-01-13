@@ -16,7 +16,7 @@
      [v/list--item          (merge (:row-component       templates)
                                    (:recycled-paper      templates)
                                    {:justify-content     :space-between
-                                    :margin-bottom      (:sixth units)
+                                    :margin-bottom      "1px"
                                     :padding             0
                                     :background-color   (:light colors)})]
      [v/icon-button                {:font-size          (:two-third units)}]

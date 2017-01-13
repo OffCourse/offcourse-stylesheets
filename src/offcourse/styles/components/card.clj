@@ -16,7 +16,7 @@
      (merge                             {:width              (* 20 (:full units))})]
     [(v/attr :data-card-type :wide)
      (merge                             {:width              (:max-content-width units)})
-     [:.card--section                   {:padding             (:full units)}]]]
+     [:.card--section                   {:padding            (:full units)}]]]
    [:.card--section             (merge  (:component           templates)
                                         (:border-thin         templates)
                                         {:position            :relative
@@ -48,7 +48,7 @@
     [(v/attr :data-link-type :em)
      (merge                             {:color              (:primary colors)})]]
    [:.card--error               (merge  (:text                templates)
-                                        {:padding           [[0 (:half units) (:third units)]]
+                                        {:padding           [[0 (:two-third units) (:third units)]]
                                          :color              (:red colors)})]
 
    ; Utils
