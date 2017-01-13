@@ -43,11 +43,14 @@
     [(v/attr :data-text-padded :large)
      (merge                             {:padding-bottom     (:two-third units)})]]
    [:.card--link                (merge  (:text                templates)
-                                        {:text-decoration     :underline})
+                                        {:cursor              :pointer})
+    [v/hovered                  (merge  {:border-bottom      [["1px" "solid" (:night colors)]]
+                                         :margin-bottom        "-1px"})]
     [(v/attr :data-link-type :strong)
      (merge                             (:subtitle            templates))]
     [(v/attr :data-link-type :em)
-     (merge                             {:color              (:primary colors)})]]
+     (merge                             {:color              (:primary colors)})
+     [v/hovered                 (merge  {:border-color       (:primary colors)})]]]
    [:.card--error               (merge  (:text                templates)
                                         {:padding           [[0 (:two-third units) (:third units)]]
                                          :color              (:red colors)})]

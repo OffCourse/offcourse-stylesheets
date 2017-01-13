@@ -39,7 +39,7 @@
 
    [v/icon-button            (merge (:row-component     templates)
                                     (:title             templates)
-                                    {:padding          (:third units)
+                                    {:padding          (:sixth units)
                                      :justify-content   :center
                                      :align-items       :center
                                      :background       (:medium colors)
