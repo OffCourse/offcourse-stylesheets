@@ -15,8 +15,9 @@
     [(v/attr :data-card-type :medium)
      (merge                             {:width              (* 20 (:full units))})]
     [(v/attr :data-card-type :wide)
-     (merge                             {:width              (:max-content-width units)})
-     [:.card--section                   {:padding             (:full units)}]]]
+     (merge                             {:width              (:max-content-width units)
+                                         :max-width           "100%"})
+     [:.card--section                   {:padding            (:full units)}]]]
    [:.card--section             (merge  (:component           templates)
                                         (:border-thin         templates)
                                         {:position            :relative
@@ -42,13 +43,16 @@
     [(v/attr :data-text-padded :large)
      (merge                             {:padding-bottom     (:two-third units)})]]
    [:.card--link                (merge  (:text                templates)
-                                        {:text-decoration     :underline})
+                                        {:cursor              :pointer})
+    [v/hovered                  (merge  {:border-bottom      [["1px" "solid" (:night colors)]]
+                                         :margin-bottom        "-1px"})]
     [(v/attr :data-link-type :strong)
      (merge                             (:subtitle            templates))]
     [(v/attr :data-link-type :em)
-     (merge                             {:color              (:primary colors)})]]
+     (merge                             {:color              (:primary colors)})
+     [v/hovered                 (merge  {:border-color       (:primary colors)})]]]
    [:.card--error               (merge  (:text                templates)
-                                        {:padding           [[0 (:half units) (:third units)]]
+                                        {:padding           [[0 (:two-third units) (:third units)]]
                                          :color              (:red colors)})]
 
    ; Utils
@@ -68,6 +72,7 @@
    (let [{:keys [min-width max-width]} (first breakpoints)]
      (at-media {:min-width min-width :max-width max-width}
        [[:.card                         {:width               "100%"}
+         [(v/attr :data-card-type :wide){:width               "100%"}]
          [v/hovered v/activated
           [:.card--wrapper              {:max-height         (* 20 (:full units))
                                          :transition          "all 0.5s ease 0.5s"}]]]

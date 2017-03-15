@@ -13,5 +13,5 @@
     (at-media {:min-width min-width :max-width max-width}
      [:.dashboard          (merge {:width      "100%"})]))
 
-   [:.dashboard--main             {:padding    [[(:full units) (:full units) 0]]}]
+   [:.dashboard--main             {:padding    [[(:two units) (:full units) 0]]}]
    [:.dashboard--controls  (merge {:padding    [[0 (+ (:full units) (:two-third units)) (:full units)]]})]])

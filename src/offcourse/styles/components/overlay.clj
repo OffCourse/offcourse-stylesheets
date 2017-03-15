@@ -13,5 +13,5 @@
                                          :width             (percent 100)
                                          :height            (percent 100)
                                          :align-items        :center
-                                         :padding         [[(:full units)]]
+                                         :padding         [[(:two units)]]
                                          :background         "rgba(0,0,0,0.8)"})]])

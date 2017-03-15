@@ -8,15 +8,15 @@
 
 (defn form [{:keys [templates breakpoints colors units]}]
   [[:.form--field                (merge (:title               templates)
-                                        {:margin-top         (:third units)
+                                        {:margin-top          "2px"
                                          :padding          [[(:third units)(:two-third units)]]
                                          :background         (:light colors)})
     [(v/attr :data-field-type :half)
      (merge                             {:min-width           "50%"
                                          :max-width           "50%"})
      [(v/nth-child "2n-1")
-      (merge                            {:border-right     [[(:sixth units) :solid (:day colors)]]})]
+      (merge                            {:border-right     [["1px" :solid (:day colors)]]})]
      [(v/nth-child "2n")
-      (merge                            {:border-left      [[(:sixth units) :solid (:day colors)]]})]]
+      (merge                            {:border-left      [["1px" :solid (:day colors)]]})]]
     [(v/attr :data-field-margin)
      (merge                             {:margin-bottom   [[(:two-third units)]]})]]])

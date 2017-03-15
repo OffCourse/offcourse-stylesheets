@@ -18,17 +18,21 @@
                                   :padding            [[0 (:full units)]]
                                   :cursor               :pointer})
     [v/hovered                   (:paper                templates)]]
-   [:.menubar--link       (merge (:text                 templates)
-                                 {:margin             [[0 (:one-and-half units) 0 0]]})
-    [v/hovered            (merge (:border-thin          templates)
-                                 (:border-highlighted   templates)
-                                 {:color               (:primary colors)
-                                  :cursor               :pointer})]]
 
    [:.actions-panel              (:row-component        templates)]
-   [:.actions-panel--link (merge (:subtitle             templates)
-                                 (:row-component        templates)
+   [:.actions-panel--item (merge (:row-component        templates)
                                  {:padding-left        (:full units)
-                                  :align-items          :center
-                                  :cursor               :pointer})
-    [v/hovered                   {:text-decoration      :underline}]]])
+                                  :align-items          :center})]
+
+   [:.actions-panel--link            (merge (:subtitle         templates)
+                                            {:cursor           :pointer})
+    [v/hovered                       (merge {:border-bottom  [["1px" "solid" (:night colors)]]
+                                             :margin-bottom    "-1px"})]]
+
+   [:.action-panel--search-container (merge (:row-component    templates)
+                                            {:cursor           :pointer})
+    [v/hovered v/activated           (merge {:border-bottom  [["1px" "solid" (:night colors)]]
+                                             :margin-bottom    "-1px"})]]
+   [:.actions-panel--search          (merge (:subtitle         templates)
+                                            {:margin-right    (:full units)})]
+   [:.actions-panel--search-btn      (merge (:subtitle         templates))]])

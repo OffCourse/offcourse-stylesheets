@@ -9,7 +9,7 @@
 (defn dropdown [{:keys [templates breakpoints colors units]}]
   [[:.dropdown                     {:display          :none
                                     :position         :absolute
-                                    :top              0
+                                    :top             (:one-and-half units)
                                     :right            0
                                     :z-index          10
                                     :width           (:column units)

@@ -16,13 +16,14 @@
      [v/list--item          (merge (:row-component       templates)
                                    (:recycled-paper      templates)
                                    {:justify-content     :space-between
-                                    :margin-bottom      (:sixth units)
+                                    :margin-bottom      "1px"
                                     :padding             0
                                     :background-color   (:light colors)})]
      [v/icon-button                {:font-size          (:two-third units)}]
      [:.list--item-section  (merge (:column-component    templates)
                                    {:flex                1})
-      [v/last                      {:flex                0}]]
+      [v/last                      {:flex                0
+                                    :align-self          :flex-start}]]
      [:.list--course        (merge (:title               templates)
                                    {:padding            (:half units)
                                     :background         (:light colors)})]

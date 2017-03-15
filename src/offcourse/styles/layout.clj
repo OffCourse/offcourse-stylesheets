@@ -27,7 +27,10 @@
    [v/main--section
     [v/last                 (merge (:row-component       templates)
                                    (:recycled-paper      templates)
-                                   {:flex                2
+                                   {:align-items         :flex-start
+                                    :justify-content     :center
+                                    :padding-top        (:two units)
+                                    :flex                2
                                     :overflow            :scroll})]]
    [:.main--overlay          (merge (:column-component    templates)
                                    {:position            :absolute
