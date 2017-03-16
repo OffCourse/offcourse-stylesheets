@@ -1,36 +1,25 @@
 (def project 'offcourse/styles)
-(def version "0.5.0-SNAPSHOT")
+(def version "0.5.1")
 
 (set-env!
  :resource-paths #{"src"}
- :repositories [["clojars" {:url "https://clojars.org/repo/"
-                            :username (System/getenv "CLOJARS_USER")
-                            :password (System/getenv "CLOJARS_PASS")}]])
+ :dependencies  '[[offcourse/bootlaces  "0.1.16" :scope "test"]])
 
-(task-options!
-   push {:repo           "clojars"
-         :ensure-branch  "master"
-         :ensure-clean   true
-         :ensure-version version}
-   pom {:project     'offcourse/styles
-        :version     version
-        :description "Offcourse stylesheets"
-        :url         "https://github.com/offcouse/offcourse-stylesheets/readme.md"
-        :scm         {:url "https://github.com/offcouse/offcourse-stylesheets"}
-        :license     {"Eclipse Public License"
-                      "http://www.eclipse.org/legal/epl-v10.html"}})
+(require '[offcourse.bootlaces      :refer :all])
+
+(task-options! pom {:project     project
+                    :version     version
+                    :description "Offcourse stylesheets"})
+
+(deftask package-version []
+  (println version))
 
 (deftask build
   "Build and install the project locally."
   []
-  (comp (pom)
-        (jar)
-        (install)))
+  (comp (build-jar)
+        (target)))
 
 (deftask dev []
   (comp (watch)
         (build)))
-
-(deftask deploy []
-  (comp (build)
-        (push :repo "clojars")))

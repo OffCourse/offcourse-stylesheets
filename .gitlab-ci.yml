@@ -1,0 +1,44 @@
+stages:
+  - deploy
+  - register
+
+variables:
+  SERVICES_INFO_ENDPOINT: https://s3.amazonaws.com/offcourse-services-info-global
+  SERVICES_INFO_BUCKET: s3://offcourse-services-info-global
+  REGISTRY: registry.gitlab.com
+
+.release_template: &release_definition
+  stage: deploy
+  image: ${REGISTRY}/${CI_PROJECT_NAMESPACE}/build-container:latest
+
+release:snapshot:
+  <<: *release_definition
+  script:
+    - boot build-jar push-snapshot
+  only:
+    - master 
+  except:
+    - tags
+
+release:version:
+  <<: *release_definition
+  script:
+    - boot build-jar push-release
+    - npm install fs-extra
+    - export PACKAGE_VERSION=$(boot package-version)
+    - node dependencies.js
+  only:
+    - tags
+  artifacts:
+    paths:
+    - dependencies.json
+
+register:version:
+  stage: register
+  image: ${REGISTRY}/${CI_PROJECT_NAMESPACE}/aws-container:latest
+  script:
+    - aws s3 cp dependencies.json ${SERVICES_INFO_BUCKET}/${CI_PROJECT_NAME}.json --content-type application/json
+  dependencies:
+    - release:version
+  only:
+    - tags
