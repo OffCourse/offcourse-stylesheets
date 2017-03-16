@@ -2,6 +2,7 @@ stages:
   - deploy
   - register
 
+
 variables:
   SERVICES_INFO_ENDPOINT: https://s3.amazonaws.com/offcourse-services-info-global
   SERVICES_INFO_BUCKET: s3://offcourse-services-info-global
